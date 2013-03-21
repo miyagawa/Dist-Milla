@@ -7,3 +7,4 @@
 - [ ] doc: rationale
 - [ ] doc: workflow
 - [ ] doc: migration
+- [ ] better support 'perl' in cpanfile in cpanm and Carton

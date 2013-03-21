@@ -1,0 +1,6 @@
+- [ ] package PluginBundle
+- [ ] MintingProfile for the defaults, enable by default with `moth new`
+- [ ] NameFromDir?
+- [ ] --install-command=cpanm
+- [ ] bumpversion command
+- [ ] migrate command

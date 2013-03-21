@@ -55,6 +55,17 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/miyagawa/Mothra/issues"
+      },
+      "homepage" : "https://github.com/miyagawa/Mothra",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/miyagawa/Mothra.git",
+         "web" : "https://github.com/miyagawa/Mothra"
+      }
+   },
    "version" : "v0.1.0"
 }
 

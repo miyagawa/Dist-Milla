@@ -4,3 +4,6 @@
 - [ ] --install-command=cpanm
 - [ ] bumpversion command
 - [ ] migrate command
+- [ ] doc: rationale
+- [ ] doc: workflow
+- [ ] doc: migration

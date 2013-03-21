@@ -64,7 +64,7 @@ Dist::Zilla::PluginBundle::Mothra - Dist::Zilla plugin defaults for Mothra
 =head1 DESCRIPTION
 
 This is a Dist::Zilla plugin bundle that implements the opinionated build
-process of L<Mothra>. Roughly quivalent to:
+process of L<Mothra>. Roughly equivalent to:
 
   ; I like to keep .pm files intact in git repo
   ; use perl-reversion before making a release

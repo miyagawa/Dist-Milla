@@ -1,0 +1,115 @@
+=head1 NAME
+
+Mothra::Tutorial - Mothra HOW TO
+
+=head1 WORKFLOW
+
+=head2 Setup
+
+Install Mothra and setup your profile.
+
+    > cpanm Mothra
+    > moth setup
+
+Setup command will ask you a simple question to make a basic
+profile. If you already have set up C<dzil> before, this is common and
+you can skip the process.
+
+=head2 Making a new distribution
+
+Now it's time to make a new distribution.
+
+    > moth new Dist-Name
+    > cd Dist-Name
+
+At this point, you will have a really simple C<Dist-Name> directory
+that contains your module file with as minimum boilerplate as
+possible.
+
+It is recommended to track your repository under git as soon as
+possible, even before releasing to CPAN.
+
+    # Init your git
+    > git init && git add . && git commit -m "initial commit"
+
+Now start writing your code, edit the docs, tests and manage CPAN
+dependencies with L<cpanfile>.
+
+    > $EDITOR lib/Dist/Name.pm t/dist-name.t cpanfile
+
+You can test your code with a simple C<prove -l t>.
+
+For the first time build only, you can make a test build to get some
+boilerplate you want to keep in the git repository so that your github
+repository looks great with README, as well as installable from git
+using C<cpanm> or testable with C<Travis CI>.
+
+    > moth build
+    > git add Build.PL META.json README.md && git commit -m "git stuff"
+
+=head2 Making the first release
+
+When you get confident and it's about time to ship to CPAN, use the
+test and release command. Before doing so, make sure your git
+directory is not dirty i.e. all changes are committed.
+
+    > git commit -a -m "Done initial version"
+
+Now, ake sure you have C<Changes> file ready and have a new entry
+under C<{{$NEXT}}>, which will be expanded to the next version of your
+module.
+
+    > $EDITOR Changes
+    > moth test
+    > moth release
+
+And your first release is done. The release is tagged on git and all
+the changes atomatically made are committed to git as well.
+
+Wait for PAUSE processing it and your module showing up on MetaCPAN in
+a few minutes. Congratulations!
+
+=head2 Making a maintainance release
+
+You have new features, bugs, pull requests and get ready to make a next
+version of your module. Great, making a new release is equally easy.
+
+First, upgrade your module's C<$VERSION> in your C<lib/Dist/Name.pm>.
+
+You can do so by hand with your editor, or use the handy command
+C<moth bumpversion>. This will scan VERSION in your C<.pm> files and
+bump the version.
+
+    > moth bumpversion
+
+Then make sure to edit C<Changes> file and contain entries for the
+next release. And commit the changes in the git.
+
+    > $EDITOR Changes
+    > git commit -a -m "release engineering"
+
+Now, make a release!
+
+    > moth test
+    > moth release
+
+Again, all the remaining changes made by Mothra will be automatically
+committed, tagged and pushed to the remote.
+
+=head1 MIGRATION
+
+TBD Migrating from Module::Install, Module::Build, ShipIt
+
+=head1 UPGRADING
+
+TBD upgrade to Dist::Zilla
+
+=head1 AUTHOR
+
+Tatsuhiko Miyagawa
+
+=head1 SEE ALSO
+
+L<Mothra>
+
+=cut

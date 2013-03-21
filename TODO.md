@@ -4,7 +4,9 @@
 - [ ] --install-command=cpanm
 - [ ] bumpversion command
 - [ ] migrate command
-- [ ] doc: rationale
-- [ ] doc: workflow
+- [x] doc: rationale
+- [x] Move to Tutorial.pod
+- [x] doc: workflow
 - [ ] doc: migration
 - [ ] better support 'perl' in cpanfile in cpanm and Carton
+- [ ] Travis

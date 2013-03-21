@@ -14,7 +14,9 @@ Mothra - Distribution builder, Opinionated but Unobtrusive
 
 =head1 SYNOPSIS
 
-  > moth new
+  > moth new Dist-Name
+  > cd Dist-Name
+
   > moth build
   > moth release
 
@@ -24,8 +26,9 @@ See L<moth> for more details about the command line usage.
 
 Mothra is a collection of L<Dist::Zilla> plugin bundle, minting
 profile and a command line wrapper. It is designed around the
-"Convention over Configuration" philosophy (I<Opinionated>), and
-by default doesn't rewrite module files at all (I<Unobtrusive>).
+"Convention over Configuration" philosophy (Opinionated), and by
+default doesn't rewrite module files nor requires you to change your
+workflow at all (Unobtrusive).
 
 Experienced CPAN authors who know how to write CPAN distributions can
 keep writing the code like before, but can remove lots of cruft, then
@@ -38,9 +41,65 @@ L<cpanfile> (optional), and a simple C<dist.ini> saying:
 
 and that's it.
 
-=head1 WHY
+=head1 CONVENTIONS
 
-=head2 Why Dist::Zilla
+As stated above, Mothra is opinionated. Mothra has a bold assumption
+and convention like the followings, which are almost compatible to the
+sister project L<Minilla>.
+
+=over 4
+
+=item Your module is Pure Perl, and files are stored in C<lib>
+
+=item Your executable file is in C<script> directory, if any
+
+=item Your module is maintained with Git and C<git ls-files> matches with what you will release
+
+=item Your module has a static list of prerequisites that can be described in C<cpanfile>
+
+=item Your module has a Changes file
+
+=back
+
+Most of them are convention used by L<Module::Build::Tiny>, just so you know.
+
+If you have a module that doesn't work with these conventions, no
+worries. You can still use Mothra, by just upgrading to L<Dist::Zilla>
+and enable/disable plugins that match with what you need. Read
+L<Mothra::Tutotial/UPGRADING> for more details.
+
+=head1 GETTING STARTED
+
+    # First time only
+    > cpanm Mothra
+    > moth setup
+
+    # Make a new distribution
+    > moth new Dist-Name
+    > cd Dist-Name
+
+    # Init your git
+    > git init && git add . && git commit -m "initial commit"
+
+    # Hack your code!
+    > $EDITOR lib/Dist/Name.pm t/dist-name.t cpanfile
+
+    # (Optional; First time only) Make your build: This will get some boilerplate for git
+    > moth build
+    > git add Build.PL META.json README.md && git commit -m "git stuff"
+
+    # Done? Test and release it!
+    > $EDITOR Changes
+    > moth build
+    > moth release
+
+It's that easy.
+
+You already have distributions with L<Module::Install>,
+L<Module::Build> or L<ShipIt>? Migrating is also trivial. See
+L<Mothra::Tutorial/MIGRATION> for more details.
+
+=head1 WHY
 
 A lot of you might have heard of Dist::Zilla. If you already use it
 and love it, then you can stop reading this. But if you're sick of
@@ -96,56 +155,58 @@ Let's see how we can address them by using Mothra, one at a time.
 
 =item Dist::Zilla is slow and heavy because of Moose
 
-I think it depends. Moose has been a lot better for the past few
+I think it depends. Moose has been improved a lot for the past few
 years, and your development machine has got a much better CPU and SSD
 as well, hopefully. I personally use Macbook Air late 2011 with Core i7
-and SSD, and running `dzil nop` with all of Mothra plugins loaded
+and SSD, and running C<dzil nop> with all of Mothra plugins loaded
 takes roughly 1.5 second.
 
-Because with L<Mothra>, I need to run the Dist::Zilla bit only at a
-distribution creation time and release time (read later), let me say
-it is an acceptable performance.
+Because with L<Mothra>, you need to run the Dist::Zilla bit only at a
+distribution creation time and release time (more on that later), let me say
+B<it is an acceptable performance>.
 
 =item Dist::Zilla requires too many dependencies
 
-Yes, that is true. And Mothra even requires more to enable recommended
-plugins, in total around 160 as of writing this.
+B<Yes, that is true>. And Mothra even requires more to enable recommended
+plugins, in total around 160 as of writing this, if you start from
+vanilla perl with no CPAN modules installed.
 
 There might probably be a work around this to reduce the number of
 required modules in Mothra in the future, but you have to accept this
 as a reality.
 
 For a quickstart with Mothra-like distribution building environment
-without installing 150+ CPAN modules, see the sister project L<Minilla>.
+without installing "half of CPAN", see the sister project L<Minilla>.
 
 =item Dist::Zilla requires me to change my workflow
 
 That was my main motivation for not switching to Dist::Zilla. The
 truth is, Dist::Zilla doesn't I<require> you to change workflow by
 default. But a lot of popular plugins and workflow suggests doing so,
-by using stuff like I<PodWeaver> or I<PkgVersion>, which requires you
+by using stuff like PodWeaver or PkgVersion, which requires you
 to switch to Dist::Zilla for everything and then generate the
 boilerplate from there.
 
-I don't care about the real boilerplate such as I<MANIFEST>,
-I<META.yml> or I<LICENSE> auto-generated, but didn't personally like
+I don't care about the real boilerplate such as C<MANIFEST>,
+C<META.yml> or C<LICENSE> auto-generated, but didn't personally like
 the idea of generating documentation. I want to edit and maintain all
 the code and docs myself, and let the authoring tool figure out
 metadata I<from> there, just like L<Module::Install>'s C<all_from>
 did. Not the other way round.
 
-With Mothra, you don't need to change your workflow, and it won't
-rewrite your previous C<.pm> files at all.
+B<With Mothra, you don't need to change your workflow>, and it won't
+rewrite your precious C<.pm> files at all. Like C<all_from>, most of
+the metadata is figured out from your module and git, automatically.
 
-Instead of running `perl Makefile.PL && make dist && cpan-upload`, you
-just have to run `moth release` and it will figure out all the metadata
+Instead of running C<< perl Makefile.PL && make dist && cpan-upload >>, you
+just have to run C<moth release> and it will figure out all the metadata
 required for PAUSE upload for you.
 
 =item Dist::Zilla makes contributing to my module on git very hard
 
 That is true for most Dist::Zilla based distributions, unless the
-author makes a special workaround to commit the relesed build into a
-git as a separate branch etc. Even with that, writing a patch and
+author makes a special workaround to commit the released build into the
+git repo as a separate branch etc. Even with that, writing a patch and
 making pull requests couldn't be as simple as before.
 
 Mothra copies the plain C<META.json> and C<Build.PL> into the git
@@ -155,11 +216,11 @@ even without L<Dist::Zilla> installed, and collaborators can just
 hack your modules, run the tests with C<prove -l t> and send a
 pull request just like a normal module.
 
-It's just you who has to install Mothra.
+B>It's just you who has to install Mothra>.
 
 =item Dist::Zilla has too many plugins to begin with
 
-That is absolutely right and why Mothra exsits, so that you don't need
+B<That is absolutely right and why Mothra exsits>, so that you don't need
 to waste time configuring your PluginBundle or searching for the
 plugin you need.
 
@@ -181,8 +242,8 @@ C<@MIYAGAWA> bundle".
 Wouldn't that be more egoistic than giving it a different name?
 
 I wrote my own L<PSGI> implementation, and didn't give it a name
-"PSGI::MIYAGAWA" - it's called L<Plack>. I wrote a kick-ass, tiny CPAN
-installer, and didn't give it a name "CPAN::Installer::MIYAGAWA" -
+PSGI::MIYAGAWA - it's called L<Plack>. I wrote a kick-ass, lightweight
+CPAN installer, and didn't give it a name CPAN::Installer::MIYAGAWA -
 it's called L<cpanm>.
 
 Because I I<think> this can be recommended for many people, and want
@@ -191,7 +252,7 @@ different name other than my own personal name bundle.
 
 =head3 Mothra? What is it?
 
-Glad you're asking. From Wikipedia:
+From Wikipedia:
 
     Mothra is a kaiju, a type of fictional monster [...] a giant
     lepidopteran with characteristics both of butterflies and of
@@ -207,17 +268,30 @@ When you replace I<Godzilla> with I<Dist::Zilla>, it made me giggle to
 read this. While I wouldn't say that dzil has its anger toward the
 human race, Mothra can ease your fear against it :)
 
-=head3 But moth? really?
+=head3 But moth? Really?
 
-I'm aware that a CLI C<moth> might not be the most pleasant command to
-type. It's just a convenience to make the command as short and easy to
-remember and type as possible.
-
-If you really mind it, feel free to alias it to the full C<mothra> :)
+This software is named Mothra, and C<moth> is a CLI for it. Think of
+it as just her (Mothra's) nickname. It's just a convenience to make
+the command as short and easy to remember and type as possible.
 
 =head1 AUTHOR
 
 Tatsuhiko Miyagawa E<lt>miyagawa@bulknews.netE<gt>
+
+=head1 CONTRIBUTORS
+
+Ricardo SIGNES wrote L<Dist::Zilla>.
+
+David Golden wrote L<Dist::Zilla::PluginBundle::DAGOLDEN>, which I
+cargo culted a lot of configuration from, for Mothra bundle.
+
+Tokuhiro Matsuno has beaten me to writing L<Minilla>, which resulted
+in me going the Dist::Zilla plugin route. L<Minilla> is a sister
+project, and we try to make them compatible to each other and makes it
+as trivial as possible to switch from/to each other.
+
+Andy Armstrong wrote L<Perl::Version> and L<perl-reversion>, which
+Mothra's C<bumpversion> command is based off of.
 
 =head1 COPYRIGHT
 

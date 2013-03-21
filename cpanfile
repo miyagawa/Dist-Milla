@@ -1,3 +1,5 @@
+requires 'perl', 5.008_001;
+
 requires 'Dist::Zilla', 4.3;
 
 requires 'Dist::Zilla::Plugin::CheckChangesHasContent';

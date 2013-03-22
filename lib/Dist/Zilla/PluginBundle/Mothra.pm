@@ -8,12 +8,15 @@ sub configure {
     my $self = shift;
 
     $self->add_plugins(
-        [ 'VersionFromModule' ],
         [ 'NextRelease' ], # should be before Git::Commit
 
         # Make the git repo installable
         [ 'Git::GatherDir', { exclude_filename => [ 'Build.PL', 'META.json', 'README.md' ] } ],
         [ 'CopyFilesFromBuild', { copy => [ 'META.json', 'Build.PL' ] } ],
+
+        # should be after GatherDir
+        [ 'VersionFromModule' ],
+        [ 'ReversionOnRelease' ],
 
         [ 'Git::Check', { allow_dirty => [ 'dist.ini', 'Changes', 'META.json' ] } ],
         [ 'Git::Commit' ],

@@ -232,7 +232,9 @@ plugin you need.
 
 =head3 So you basically wrote a simple PluginBundle and some wrapper, and give that a name?
 
-Yes. That's the whole point.
+Yes. That's the whole point. Think L<Dist::Zila> as a framework
+(because it is!) and Mothra is a (thin) application built on top of
+that.
 
 =head3 That's so egoistic for you! Why not just Dist::Zilla::PluginBundle::Author::MIYAGAWA?
 

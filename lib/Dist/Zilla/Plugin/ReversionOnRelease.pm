@@ -10,12 +10,19 @@ with(
     },
 );
 
+# from perl-reversion
+my $VersionRegexp =
+  qr{ ^ ( .*?  [\$\*] (?: \w+ (?: :: | ' ) )* VERSION \s* = \D*? ) 
+                Perl::Version::REGEX
+                ( .* ) $ }x;
+
+
 sub munge_files {
     my $self = shift;
 
     return unless $ENV{DZIL_RELEASING};
 
-    my $version = $self->bump_version;
+    my $version = $self->reversion;
     $self->munge_file($_, $version) for @{ $self->found_files };
 
     $self->zilla->version("$version");
@@ -23,23 +30,16 @@ sub munge_files {
     return;
 }
 
-sub bump_version {
+sub reversion {
     my $self = shift;
 
     my $new_ver = Perl::Version->new($self->zilla->version);
 
-    my %BUMP = (
-        'auto'       => 'auto',
-        'revision'   => 0,
-        'version'    => 1,
-        'subversion' => 2,
-        'alpha'      => 3,
-    );
-
-    my $bump_spec = "auto"; # xxx
-    my $bump = $BUMP{$bump_spec};
-
-    if ($bump eq 'auto') {
+    if ($ENV{V}) {
+        $self->log("Overriding VERSION to $ENV{V}");
+        $new_ver->set($ENV{V});
+    } elsif ($self->is_released($new_ver)) {
+        $self->log_debug("$new_ver is released. Bumping it");
         if ($new_ver->is_alpha) {
             $new_ver->inc_alpha;
         } else {
@@ -47,24 +47,26 @@ sub bump_version {
             $new_ver->increment($pos);
         }
     } else {
-        my $pos = $new_ver->components - 1;
-        if ($bump > $pos) {
-            die "Cannot bump $bump_spec -- version $new_ver does not have "
-              . "'$bump' component.\n";
-        }
-        $new_ver->increment($bump);
+        $self->log_debug("$new_ver it not released yet. No need to bump");
     }
 
     $new_ver;
 }
 
-sub version_re_perl {
-    my $ver_re = shift;
+sub is_released {
+    my($self, $new_ver) = @_;
 
-    return
-      qr{ ^ ( .*?  [\$\*] (?: \w+ (?: :: | ' ) )* VERSION \s* = \D*? ) 
-                   $ver_re 
-                   ( .* ) $ }x;
+    my $changes_file = 'Changes';
+
+    if (! -e $changes_file) {
+        $self->log("No $changes_file found in your directory: Assuming $new_ver is released.");
+        return 1;
+    }
+
+    my $changelog = Dist::Zilla::File::OnDisk->new({ name => $changes_file });
+
+    grep /^$new_ver(?:-TRIAL)?(?:\s+|$)/,
+      split /\n/, $changelog->content;
 }
 
 sub filter_pod {
@@ -102,10 +104,8 @@ sub rewrite_version {
 sub munge_file {
     my($self, $file, $new_ver) = @_;
 
-    my $re = version_re_perl(Perl::Version::REGEX);
-
     my $scanner = $self->filter_pod(sub {
-        s{$re}{
+        s{$VersionRegexp}{
             $self->rewrite_version($file, $1, Perl::Version->new($2.$3.$4), $5, $new_ver)
         }e;
     });

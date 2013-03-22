@@ -19,9 +19,6 @@ sub configure {
         [ 'ReversionOnRelease' ],
 
         [ 'Git::Check', { allow_dirty => [ 'dist.ini', 'Changes', 'META.json' ] } ],
-        [ 'Git::Commit' ],
-        [ 'Git::Tag' ],
-        [ 'Git::Push' ],
 
         # Make Github center and front
         [ 'GithubMeta', { issues => 1 } ],
@@ -46,7 +43,14 @@ sub configure {
         [ 'CheckChangesHasContent' ],
         [ 'TestRelease' ],
         [ 'ConfirmRelease' ],
-        [ 'UploadToCPAN' ],
+#        [ 'UploadToCPAN' ],
+        [ 'FakeRelease' ],
+
+        [ 'CopyFilesFromRelease', { match => '\.pm$' } ],
+        [ 'Git::Commit' ],
+        [ 'Git::Tag' ],
+        [ 'Git::Push' ],
+
     );
 }
 

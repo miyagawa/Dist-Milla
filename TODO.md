@@ -2,7 +2,7 @@
 - [ ] MintingProfile for the defaults, enable by default with `moth new`
 - [ ] NameFromDir?
 - [ ] --install-command=cpanm
-- [ ] bumpversion command
+- [x] bumpversion command
 - [ ] migrate command
 - [x] doc: rationale
 - [x] Move to Tutorial.pod

@@ -5,6 +5,7 @@ requires 'Dist::Zilla', 4.3;
 requires 'Dist::Zilla::Plugin::CheckChangesHasContent';
 requires 'Dist::Zilla::Plugin::ConfirmRelease';
 requires 'Dist::Zilla::Plugin::CopyFilesFromBuild';
+requires 'Dist::Zilla::Plugin::CopyFilesFromRelease';
 requires 'Dist::Zilla::Plugin::ExecDir';
 requires 'Dist::Zilla::Plugin::ExtraTests';
 requires 'Dist::Zilla::Plugin::Git::GatherDir';

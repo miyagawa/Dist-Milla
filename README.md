@@ -193,7 +193,9 @@ Let's see how we can address them by using Mothra, one at a time.
 
 ### So you basically wrote a simple PluginBundle and some wrapper, and give that a name?
 
-Yes. That's the whole point.
+Yes. That's the whole point. Think [Dist::Zila](http://search.cpan.org/perldoc?Dist::Zila) as a framework
+(because it is!) and Mothra is a (thin) application built on top of
+that.
 
 ### That's so egoistic for you! Why not just Dist::Zilla::PluginBundle::Author::MIYAGAWA?
 

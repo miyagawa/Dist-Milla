@@ -30,6 +30,7 @@
             "Dist::Zilla::Plugin::CheckChangesHasContent" : "0",
             "Dist::Zilla::Plugin::ConfirmRelease" : "0",
             "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0",
+            "Dist::Zilla::Plugin::CopyFilesFromRelease" : "0",
             "Dist::Zilla::Plugin::ExecDir" : "0",
             "Dist::Zilla::Plugin::ExtraTests" : "0",
             "Dist::Zilla::Plugin::Git::GatherDir" : "0",
@@ -66,6 +67,6 @@
          "web" : "https://github.com/miyagawa/Mothra"
       }
    },
-   "version" : "v0.1.1"
+   "version" : "v0.1.0"
 }
 

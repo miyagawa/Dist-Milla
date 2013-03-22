@@ -11,9 +11,10 @@ with(
 );
 
 # from perl-reversion
-my $VersionRegexp =
+my $VersionRegexp = Perl::Version::REGEX;
+$VersionRegexp =
   qr{ ^ ( .*?  [\$\*] (?: \w+ (?: :: | ' ) )* VERSION \s* = \D*? ) 
-                Perl::Version::REGEX
+                $VersionRegexp
                 ( .* ) $ }x;
 
 

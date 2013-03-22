@@ -47,8 +47,8 @@ sub configure {
         [ 'FakeRelease' ],
 
         [ 'CopyFilesFromRelease', { match => '\.pm$' } ],
-        [ 'Git::Commit' ],
-        [ 'Git::Tag' ],
+        [ 'Git::Commit', { commit_msg => "Checking changes for %v" } ],
+        [ 'Git::Tag', { tag_format => '%v', tag_message => '' } ],
         [ 'Git::Push' ],
 
     );
@@ -73,54 +73,7 @@ Dist::Zilla::PluginBundle::Mothra - Dist::Zilla plugin defaults for Mothra
 This is a Dist::Zilla plugin bundle that implements the opinionated build
 process of L<Mothra>. Roughly equivalent to:
 
-  ; I like to keep .pm files intact in git repo
-  ; use perl-reversion before making a release
-  [VersionFromModule]
-  
-  [NextRelease] ; should be before Git::Commit
-  
-  ; Make the git repo installable
-  [Git::GatherDir]
-  exclude_filename = Build.PL
-  exclude_filename = META.json
-  exclude_filename = README.md
-  [CopyFilesFromBuild]
-  copy = META.json
-  copy = Build.PL
-  [@Git]
-  allow_dirty = dist.ini
-  allow_dirty = Changes
-  allow_dirty = META.json
-  
-  ; Make Github center and front
-  [GithubMeta]
-  issues = 1
-  [ReadmeAnyFromPod]
-  type = markdown
-  filename = README.md
-  location = root
-  
-  ; cpanfile + MB::Tiny
-  [Prereqs::FromCPANfile]
-  [ModuleBuildTiny]
-  [MetaJSON]
-  
-  ; standard stuff
-  [PodSyntaxTests]
-  [Test::Compile]
-  
-  [MetaYAML]
-  [License]
-  [ReadmeFromPod]
-  [ExtraTests]
-  [ExecDir]
-  [ShareDir]
-  [Manifest]
-  
-  [CheckChangesHasContent]
-  [TestRelease]
-  [ConfirmRelease]
-  [UploadToCPAN]
+  # TBD
 
 =head1 SEE ALSO
 

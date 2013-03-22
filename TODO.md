@@ -7,6 +7,7 @@
 - [x] doc: rationale
 - [x] Move to Tutorial.pod
 - [x] doc: workflow
-- [ ] doc: migration
+- [x] doc: migration
+- [ ] doc: upgrading to dzil
 - [ ] better support 'perl' in cpanfile in cpanm and Carton
 - [ ] Travis

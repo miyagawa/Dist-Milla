@@ -97,7 +97,7 @@ It's that easy.
 
 You already have distributions with L<Module::Install>,
 L<Module::Build> or L<ShipIt>? Migrating is also trivial. See
-L<Mothra::Tutorial/MIGRATION> for more details.
+L<Mothra::Tutorial/MIGRATING> for more details.
 
 =head1 WHY
 
@@ -119,7 +119,9 @@ Dist::Zilla doesn't do the job of installing of your module. So you
 can focus on the authoring side of things with dzil, while letting
 MakeMaker or Module::Build to do the installation side of things.
 
-I like this design.
+I like this design. David Golden also has L<an excellent blog
+post|http://www.dagolden.com/index.php/752/why-im-using-distzilla/>
+explaining more details about what this means.
 
 =item *
 
@@ -216,7 +218,7 @@ even without L<Dist::Zilla> installed, and collaborators can just
 hack your modules, run the tests with C<prove -l t> and send a
 pull request just like a normal module.
 
-B>It's just you who has to install Mothra>.
+B<It's just you who has to install Mothra>.
 
 =item Dist::Zilla has too many plugins to begin with
 

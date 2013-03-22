@@ -96,13 +96,105 @@ Now, make a release!
 Again, all the remaining changes made by Mothra will be automatically
 committed, tagged and pushed to the remote.
 
-=head1 MIGRATION
+=head1 MIGRATING
 
-TBD Migrating from Module::Install, Module::Build, ShipIt
+This section describes how to migrate your current authoring process
+to Mothra.
+
+=head2 C<moth migrate>
+
+If you use a standard build tool to build a distribution, chances are
+that Mothra can automatically detect and figure out what you need to
+do for you. Just run the command:
+
+    > moth migrate
+
+and it will do the hard work of removing cruft, adding new files and
+ready to git commit them.
+
+If somehow that didn't work, or you like more manual process to know
+what's going on behind the scenes, continue reading.
+
+=head2 Manually migrating from other build tools
+
+=head3 Module Dependencies to cpanfile
+
+First, move the prereq declaration from C<Makefile.PL> or C<Build.PL>
+to C<cpanfile>.
+
+L<cpanfile> is mostly compatible to L<Module::Install>'s requirement
+DSL, so you can just copy them over to C<cpanfile>.
+
+    # Makefile.PL
+    test_requires 'Test::More', 0.90;
+    requires 'Plack', '1.000';
+
+becomes:
+
+    # cpanfile
+    test_requires 'Test::More', 0.90;
+    requires 'Plack', '1.000';
+
+which is exactly the same. If you use L<Module::Build> or
+L<ExtUtils::MakeMaker>, that will be more manual process, but
+basically the same thing. See L<cpanfile> for the available syntax.
+
+=head3 Remove boilerplate 
+
+Next, remove unnecessary boilerplate files.
+
+    > git rm {Makefile,Build}.PL MANIFEST MANIFEST.SKIP README .shipit
+
+=head3 Create a new ini and edit configurations
+
+Next, create a new C<dist.ini> with the following two lines:
+
+    name = Dist-Name
+    [@Mothra]
+
+Next, Edit C<.gitignore>.
+
+Add:
+
+    /Dist-Name-*
+
+and remove:
+
+    META.json
+
+if you have one, from C<.gitignore>.
+
+You're almost done, and your directory will look like:
+
+    cpanfile
+    dist.ini
+    lib/Dist/Name.pm
+    t/...
+
+C<git add> the newly created files and commit it.
+
+=head3 Make a new build
+
+Now you're ready to make the first build.
+
+    > moth build
+
+and if it was successful, you get a build, and also new C<Build.PL>,
+C<META.json> and C<README.md> in your working directory for
+git-friendliness. C<git add> them and commit it.
+
+    > git add Build.PL META.json README.md && git commit -m "git stuff"
+
+Now you're ready to roll a new release with Mothra.
+
+    > moth bumpversion
+    > moth release
+
+to make a new release, in the same way described above for a new Mothra setup.
 
 =head1 UPGRADING
 
-TBD upgrade to Dist::Zilla
+B<TBD>: upgrade to Dist::Zilla
 
 =head1 AUTHOR
 

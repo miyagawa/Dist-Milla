@@ -79,7 +79,7 @@ It's that easy.
 
 You already have distributions with [Module::Install](http://search.cpan.org/perldoc?Module::Install),
 [Module::Build](http://search.cpan.org/perldoc?Module::Build) or [ShipIt](http://search.cpan.org/perldoc?ShipIt)? Migrating is also trivial. See
-["MIGRATION" in Mothra::Tutorial](http://search.cpan.org/perldoc?Mothra::Tutorial#MIGRATION) for more details.
+["MIGRATING" in Mothra::Tutorial](http://search.cpan.org/perldoc?Mothra::Tutorial#MIGRATING) for more details.
 
 # WHY
 
@@ -97,7 +97,8 @@ First, let me tell you what's great about Dist::Zilla.
 can focus on the authoring side of things with dzil, while letting
 MakeMaker or Module::Build to do the installation side of things.
 
-    I like this design.
+    I like this design. David Golden also has [an excellent blog post](http://www.dagolden.com/index.php/752/why-im-using-distzilla/)
+    explaining more details about what this means.
 
 - There are so many plugins made by the great CPAN ecosystem, and you
 will most likely find a plugin that is already written, to do what you
@@ -180,7 +181,7 @@ Let's see how we can address them by using Mothra, one at a time.
     hack your modules, run the tests with `prove -l t` and send a
     pull request just like a normal module.
 
-    B>It's just you who has to install Mothra>.
+    __It's just you who has to install Mothra__.
 
 - Dist::Zilla has too many plugins to begin with
 

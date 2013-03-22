@@ -2,8 +2,11 @@ Revision history for Mothra
 
 {{$NEXT}}
 
+v0.1.3    2013-03-22 16:19:50 America/Los_Angeles
+        - Internal
+
 v0.1.2    2013-03-22 16:03:24 America/Los_Angeles
-        - Foo
+        - Internal
 
 v0.1.1    2013-03-22 15:56:28 America/Los_Angeles
         - Debugging

@@ -8,8 +8,8 @@ Mothra::Tutorial - Mothra HOW TO
 
 Install Mothra and setup your profile.
 
-    > cpanm Mothra
-    > moth setup
+  > cpanm Mothra
+  > moth setup
 
 Setup command will ask you a simple question to make a basic
 profile. If you already have set up C<dzil> before, this is common and
@@ -19,8 +19,8 @@ you can skip the process.
 
 Now it's time to make a new distribution.
 
-    > moth new Dist-Name
-    > cd Dist-Name
+  > moth new Dist-Name
+  > cd Dist-Name
 
 At this point, you will have a really simple C<Dist-Name> directory
 that contains your module file with as minimum boilerplate as
@@ -29,13 +29,13 @@ possible.
 It is recommended to track your repository under git as soon as
 possible, even before releasing to CPAN.
 
-    # Init your git
-    > git init && git add . && git commit -m "initial commit"
+  # Init your git
+  > git init && git add . && git commit -m "initial commit"
 
 Now start writing your code, edit the docs, tests and manage CPAN
 dependencies with L<cpanfile>.
 
-    > $EDITOR lib/Dist/Name.pm t/dist-name.t cpanfile
+  > $EDITOR lib/Dist/Name.pm t/dist-name.t cpanfile
 
 You can test your code with a simple C<prove -l t>.
 
@@ -44,8 +44,8 @@ boilerplate you want to keep in the git repository so that your github
 repository looks great with README, as well as installable from git
 using C<cpanm> or testable with C<Travis CI>.
 
-    > moth build
-    > git add Build.PL META.json README.md && git commit -m "git stuff"
+  > moth build
+  > git add Build.PL META.json README.md && git commit -m "git stuff"
 
 =head2 Making the first release
 
@@ -53,15 +53,15 @@ When you get confident and it's about time to ship to CPAN, use the
 test and release command. Before doing so, make sure your git
 directory is not dirty i.e. all changes are committed.
 
-    > git commit -a -m "Done initial version"
+  > git commit -a -m "Done initial version"
 
 Now, ake sure you have C<Changes> file ready and have a new entry
 under C<{{$NEXT}}>, which will be expanded to the next version of your
 module.
 
-    > $EDITOR Changes
-    > moth test
-    > moth release
+  > $EDITOR Changes
+  > moth test
+  > moth release
 
 And your first release is done. The release is tagged on git and all
 the changes atomatically made are committed to git as well.
@@ -80,18 +80,18 @@ You can do so by hand with your editor, or use the handy command
 C<moth bumpversion>. This will scan VERSION in your C<.pm> files and
 bump the version.
 
-    > moth bumpversion
+  > moth bumpversion
 
 Then make sure to edit C<Changes> file and contain entries for the
 next release. And commit the changes in the git.
 
-    > $EDITOR Changes
-    > git commit -a -m "release engineering"
+  > $EDITOR Changes
+  > git commit -a -m "release engineering"
 
 Now, make a release!
 
-    > moth test
-    > moth release
+  > moth test
+  > moth release
 
 Again, all the remaining changes made by Mothra will be automatically
 committed, tagged and pushed to the remote.
@@ -107,7 +107,7 @@ If you use a standard build tool to build a distribution, chances are
 that Mothra can automatically detect and figure out what you need to
 do for you. Just run the command:
 
-    > moth migrate
+  > moth migrate
 
 and it will do the hard work of removing cruft, adding new files and
 ready to git commit them.
@@ -125,15 +125,15 @@ to C<cpanfile>.
 L<cpanfile> is mostly compatible to L<Module::Install>'s requirement
 DSL, so you can just copy them over to C<cpanfile>.
 
-    # Makefile.PL
-    test_requires 'Test::More', 0.90;
-    requires 'Plack', '1.000';
+  # Makefile.PL
+  test_requires 'Test::More', 0.90;
+  requires 'Plack', '1.000';
 
 becomes:
 
-    # cpanfile
-    test_requires 'Test::More', 0.90;
-    requires 'Plack', '1.000';
+  # cpanfile
+  test_requires 'Test::More', 0.90;
+  requires 'Plack', '1.000';
 
 which is exactly the same. If you use L<Module::Build> or
 L<ExtUtils::MakeMaker>, that will be more manual process, but
@@ -143,33 +143,30 @@ basically the same thing. See L<cpanfile> for the available syntax.
 
 Next, remove unnecessary boilerplate files.
 
-    > git rm {Makefile,Build}.PL MANIFEST MANIFEST.SKIP README .shipit
+  > git rm {Makefile,Build}.PL MANIFEST MANIFEST.SKIP README .shipit
 
 =head3 Create a new ini and edit configurations
 
 Next, create a new C<dist.ini> with the following two lines:
 
-    name = Dist-Name
-    [@Mothra]
+  name = Dist-Name
+  [@Mothra]
 
 Next, Edit C<.gitignore>.
 
 Add:
 
-    /Dist-Name-*
+  /Dist-Name-*
+  !META.json
 
-and remove:
-
-    META.json
-
-if you have one, from C<.gitignore>.
+to C<.gitignore>.
 
 You're almost done, and your directory will look like:
 
-    cpanfile
-    dist.ini
-    lib/Dist/Name.pm
-    t/...
+  cpanfile
+  dist.ini
+  lib/Dist/Name.pm
+  t/...
 
 C<git add> the newly created files and commit it.
 
@@ -177,20 +174,37 @@ C<git add> the newly created files and commit it.
 
 Now you're ready to make the first build.
 
-    > moth build
+  > moth build
 
 and if it was successful, you get a build, and also new C<Build.PL>,
 C<META.json> and C<README.md> in your working directory for
 git-friendliness. C<git add> them and commit it.
 
-    > git add Build.PL META.json README.md && git commit -m "git stuff"
+  > git add Build.PL META.json README.md && git commit -m "git stuff"
 
-Now you're ready to roll a new release with Mothra.
+Now you're ready to roll a new release with Mothra. Before doing so,
+convert your C<Changes> file format a little bit, and make sure you
+have a following header in the top:
 
-    > moth bumpversion
-    > moth release
+  {{$NEXT}}
+          - Change log entry for the next version
 
-to make a new release, in the same way described above for a new Mothra setup.
+The C<{{$NEXT}}> is a template variable that gets replaced with the
+version and date string, when you make a next release. This is almost
+the I<only> change you're required to make in your code base.
+
+Now, run the release command:
+
+  > moth release
+
+to make a new release, in the same way described above for a new
+Mothra setup. When this is not your first release, the version number
+gets automatically bumped by Mothra. If you want to set a speicifc
+version for the next release (e.g. you have 0.1.2 and make your next
+release 0.2.0, rather than 0.1.3), use C<V> environment variable with
+the release command:
+
+  > V=0.2.0 moth release
 
 =head1 UPGRADING
 

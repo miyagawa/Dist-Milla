@@ -60,8 +60,6 @@ sister project L<Minilla>.
 
 =back
 
-Most of them are convention used by L<Module::Build::Tiny>, just so you know.
-
 If you have a module that doesn't work with these conventions, no
 worries. Because Milla is just a Dist::Zilla profile, you can just
 upgrade to L<Dist::Zilla> and enable/disable plugins that match with
@@ -105,51 +103,40 @@ and love it, then you can stop reading this, or even using this module
 at all.
 
 If you heard of dzil and think it's overkill or doesn't work for yor
-module, Milla might be worth a look.
+module, this is why Milla exists.
 
 If you have tried dzil ages ago and thought it was slow, or couldn't
-find how to configure it to do what you want it to do, Milla might be
-for you.
+find how to configure it to do what you want it to do, Milla will be
+just for you.
 
-First, let me tell you what's great about Dist::Zilla.
-
-=over 4
-
-=item *
+First, let me tell you what's the reason to like Dist::Zilla.
 
 Dist::Zilla doesn't do the job of installing of your module. So you
 can focus on the authoring side of things with dzil, while letting
-MakeMaker or Module::Build to do the installation side of things. I
+MakeMaker or Module::Build(::Tiny) to do the installation side of things. I
 like this design. David Golden also has L<an excellent blog
 post|http://www.dagolden.com/index.php/752/why-im-using-distzilla/>
 explaining more details about what this means.
 
-=item *
-
-There are so many plugins made by the great CPAN ecosystem, and you
-will most likely find a plugin that is already written, to do what you
-want to accomplish.
-
-=back
-
 That said, I myself have avoided switching to Dist::Zilla for a long
 time for some reason. I actually tried a couple of times, but ended up
-giving up to swithing it.
+giving up to swithing it. You can google for "Hate Dist::Zilla" and
+will be able to find similarly frustrated developers.
 
 In my observation, typical problems/dislikes around Dist::Zilla can be
 categorized into one of the following thoughts.
 
 =over 4
 
-=item Dist::Zilla is slow and heavy because of Moose
+=item Dist::Zilla is slow
 
-=item Dist::Zilla requires too many dependencies
+=item Dist::Zilla has too many dependencies
 
-=item Dist::Zilla requires me to change my workflow
+=item Dist::Zilla is obtrusive
 
-=item Dist::Zilla makes contributing to my module on git very hard
+=item Dist::Zilla makes contributing hard
 
-=item Dist::Zilla is confusing/difficult to use
+=item Dist::Zilla isn't just worth it
 
 =back
 
@@ -157,34 +144,30 @@ Let's see how we can address them by using Milla, one at a time.
 
 =over 4
 
-=item Dist::Zilla is slow and heavy because of Moose
+=item Dist::Zilla is slow
 
-I think it depends. Moose has been improved a lot for the past few
-years, and your development machine has got a much better CPU and SSD
-as well, hopefully. For me personally, with all of Milla plugins
-loaded, C<dzil nop> takes roughly 1.5 second.
+Moose has been improved a lot for the past few years, and your
+development machine has got a much better CPU and SSD as well,
+hopefully. For me personally, with all of Milla plugins loaded, C<dzil
+nop> takes roughly 1.5 second, which B<I would say is acceptable>
+since I only need to run it at a distribution creation time and
+release time. More on that later.
 
-Because with Milla you need to run the Dist::Zilla bit only at a
-distribution creation time and release time (more on that later), let
-me say B<the performance is acceptable>.
+=item Dist::Zilla has too many dependencies
 
-=item Dist::Zilla requires too many dependencies
-
-B<Yes, that is true>. And Milla even requires more to enable recommended
-plugins, in total around 160 as of writing this, if you start from
-vanilla perl with no CPAN modules installed.
+B<That is absolutely true>, and Milla doesn't solve that problem.
 
 For a quickstart with Milla-like distribution building environment
 without installing "half of CPAN", see the sister project L<Minilla>.
 
-=item Dist::Zilla requires me to change my workflow
+=item Dist::Zilla is obtrusive
 
 That was my main motivation for not switching to Dist::Zilla. The
 truth is, Dist::Zilla doesn't I<require> you to change workflow by
 default. But a lot of popular plugins and workflow suggests doing so,
-by using stuff like PodWeaver or PkgVersion, which requires you
-to switch to Dist::Zilla for everything and then generate the
-boilerplate, or munge your modules from there.
+by using stuff like PodWeaver, which requires you to switch to
+Dist::Zilla for everything and then generate the boilerplate, or munge
+your modules from there.
 
 I don't care about the real boilerplate such as C<MANIFEST>,
 C<META.yml> or C<LICENSE> auto-generated, but didn't personally like
@@ -198,17 +181,9 @@ B<With Milla, you don't need to change your workflow>, and it won't
 rewrite your precious C<.pm> files at all. Like C<all_from>, most of
 the metadata is figured out from your module and git, automatically.
 
-Instead of running C<< perl Makefile.PL && make dist && cpan-upload
->>, you just have to run C<dzil release> and it will figure out all
-the metadata required for PAUSE upload for you, create a tarball,
-upload to CPAN, and push to your git repo.
+=item Dist::Zilla makes contributing hard
 
-=item Dist::Zilla makes contributing to my module on git very hard
-
-That is true for most Dist::Zilla based distributions, unless the
-author makes a special workaround to commit the released build into the
-git repo as a separate branch etc. Even with that, writing a patch and
-making pull requests couldn't be as simple as before.
+That is true for most Dist::Zilla based distributions.
 
 Milla copies the plain C<META.json> and C<Build.PL> into the git
 repository you automatically bump on every release. And there won't be
@@ -218,13 +193,15 @@ C<$VERSION> automatically).
 This means the git repository can be installed as a standard CPAN
 distribution even without L<Dist::Zilla> installed, and collaborators
 can just hack your modules, run the tests with C<prove -l t> and send
-a pull request just like a normal module.
+a pull request just like a normal module without using dzil at all.
 
 B<It's just you who has to install Milla>.
 
-=item Dist::Zilla is confusing/difficult to use
+=item Dist::Zilla isn't just worth it
 
-B<That is absolutely right and why Milla exsits>.
+Dist::Zilla has a lot of plugins to search from, and it's so easy for
+you to spend a few days until you settle with the configuration you
+need. B<That is absolutely true and why Milla exsits>.
 
 If you have tried Dist::Zilla before, you might have shared the same
 experience with me, where the default Basic profile doesn't do
@@ -234,8 +211,7 @@ introduced by the clever workflow.
 
 Milla provides a sensible set of defaults that will work for 90% of
 people, and you don't need to waste time configuring your PluginBundle
-or searching for the plugin you need. And once you do, it's easy to
-upgrade to Dist::Zilla from there.
+or searching for the plugin you need.
 
 =back
 
@@ -268,7 +244,7 @@ different name other than my own personal name bundle.
 =head3 Milla?
 
 The name is taken as a mashup between L<Dist::Zilla> and our sister
-project L<Minilla>. It also sounds reminds you of Milla Jovovich.
+project L<Minilla>. It also should remind you of Milla Jovovich.
 
 =head1 AUTHOR
 

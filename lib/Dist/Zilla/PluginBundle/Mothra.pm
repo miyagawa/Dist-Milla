@@ -44,7 +44,7 @@ sub configure {
         [ 'CheckChangesHasContent' ],
         [ 'TestRelease' ],
         [ 'ConfirmRelease' ],
-        [ $ENV{FAKE_RELEASE} ? 'UploadToCPAN' : 'FakeRelease' ],
+        [ $ENV{FAKE_RELEASE} ? 'FakeRelease' : 'UploadToCPAN' ],
 
         [ 'CopyFilesFromRelease', { match => '\.pm$' } ],
         [ 'Git::Commit', {

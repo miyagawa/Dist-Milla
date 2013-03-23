@@ -152,14 +152,10 @@ Next, create a new C<dist.ini> with the following two lines:
   name = Dist-Name
   [@Mothra]
 
-Next, Edit C<.gitignore>.
-
-Add:
+Next, Edit C<.gitignore> and add the following lines:
 
   /Dist-Name-*
   !META.json
-
-to C<.gitignore>.
 
 You're almost done, and your directory will look like:
 
@@ -176,9 +172,12 @@ Now you're ready to make the first build.
 
   > moth build
 
-and if it was successful, you get a build, and also new C<Build.PL>,
-C<META.json> and C<README.md> in your working directory for
-git-friendliness. C<git add> them and commit it.
+and if it was successful, you get a build in a directory called
+C<Dist-Name-v0.1.0> under your current directory. They can be later
+removed with C<moth clean> command.
+
+Also, new C<Build.PL>, C<META.json> and C<README.md> are added in your
+working directory for git-friendliness. C<git add> them and commit it.
 
   > git add Build.PL META.json README.md && git commit -m "git stuff"
 

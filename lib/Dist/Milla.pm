@@ -253,8 +253,13 @@ lightweight replacement that does the same thing.
 
 =head3 Milla?
 
-The name is taken as a mashup between L<Dist::Zilla> and our sister
-project L<Minilla>. It also should remind you of Milla Jovovich.
+L<Minilla> is a son of Godzilla. This distribtion builder is just a
+Dist::Zilla in the core, but acts like Minilla does. Hence the name
+Milla.
+
+Milla should also remind you of Milla Jovovich, but I couldn't make up
+any correlation about it, besides Resident Evil is such a great
+videogame and movie.
 
 =head1 AUTHOR
 

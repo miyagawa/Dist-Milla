@@ -48,7 +48,7 @@ sub configure {
 
         [ 'CopyFilesFromRelease', { match => '\.pm$' } ],
         [ 'Git::Commit', {
-            commit_msg => "Checking in changes for %v",
+            commit_msg => '%v',
             allow_dirty => [ 'dist.ini', 'Changes', 'META.json' ],
             allow_dirty_match => '\.pm$', # .pm files copied back from Release
         } ],

@@ -224,9 +224,18 @@ B<It's just you who has to install Milla>.
 
 =item Dist::Zilla has too many plugins to begin with
 
-B<That is absolutely right and why Milla exsits>, so that you don't
-need to waste time configuring your PluginBundle or searching for the
-plugin you need.
+B<That is absolutely right and why Milla exsits>.
+
+If you have tried Dist::Zilla before, you might have shared the same
+experience with me, where the default Basic profile doesn't do
+much. And when you started wondering what other authors are doing, you
+would be overwhelmed by the amount of plugins and complexicy
+introduced by the clever workflow.
+
+Milla provides a sensible set of defaults that will work for 90% of
+people, and you don't need to waste time configuring your PluginBundle
+or searching for the plugin you need. And once you do, it's easy to
+upgrade to Dist::Zilla from there.
 
 =back
 

@@ -10,7 +10,7 @@ sub provide_name {
 
     my $root = dir(Cwd::cwd);
 
-    # make sure it has dist.ini
+    # make sure it is a root dir, by checking -e dist.ini
     return unless -e $root->file('dist.ini');
 
     my $name = $root->basename;

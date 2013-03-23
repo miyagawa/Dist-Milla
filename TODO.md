@@ -1,6 +1,6 @@
 - [x] package PluginBundle
 - [ ] ProfileProvider for the defaults dzil new -P Milla
-- [ ] NameFromDir
+- [x] NameFromDir
 - [ ] --install-command=cpanm override
 - [x] bumpversion command
 - [ ] migrate command

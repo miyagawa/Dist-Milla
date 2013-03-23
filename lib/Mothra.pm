@@ -1,7 +1,7 @@
 package Mothra;
 
 use strict;
-use version; our $VERSION = version->declare('v0.1.3');
+use version; our $VERSION = version->declare('v0.1.4');
 
 1;
 __END__

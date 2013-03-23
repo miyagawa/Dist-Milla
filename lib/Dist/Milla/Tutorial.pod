@@ -140,6 +140,11 @@ Next, create a new C<dist.ini> with the following two lines:
   name = Dist-Name
   [@Milla]
 
+the C<name = > line is optional.
+
+If your work directory is named C<Dist-Name>, Milla will be able to
+figure out that is your distribution name, so you can omit that line.
+
 Next, Edit C<.gitignore> and add the following lines:
 
   /Dist-Name-*

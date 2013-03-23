@@ -8,6 +8,8 @@ sub configure {
     my $self = shift;
 
     $self->add_plugins(
+        [ 'NameFromDirectory' ],
+
         # Make the git repo installable
         [ 'Git::GatherDir', { exclude_filename => [ 'Build.PL', 'META.json', 'README.md' ] } ],
         [ 'CopyFilesFromBuild', { copy => [ 'META.json', 'Build.PL' ] } ],

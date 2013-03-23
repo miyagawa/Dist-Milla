@@ -1,13 +1,15 @@
 - [x] package PluginBundle
-- [ ] MintingProfile for the defaults, enable by default with `moth new`
-- [ ] NameFromDir?
-- [ ] --install-command=cpanm
+- [ ] ProfileProvider for the defaults dzil new -P Milla
+- [ ] NameFromDir
+- [ ] --install-command=cpanm override
 - [x] bumpversion command
 - [ ] migrate command
 - [x] doc: rationale
 - [x] Move to Tutorial.pod
 - [x] doc: workflow
 - [x] doc: migration
-- [ ] doc: upgrading to dzil
 - [ ] better support 'perl' in cpanfile in cpanm and Carton
-- [ ] Travis
+- [ ] Travis?
+- [ ] mymeta-cpanfile
+- [ ] TDZ for ReversionOnRelease
+

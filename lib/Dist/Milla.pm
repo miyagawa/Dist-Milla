@@ -30,9 +30,10 @@ nor requires you to change your workflow at all (Unobtrusive).
 
 Experienced CPAN authors who know how to write CPAN distributions can
 keep writing the code like before, but can remove lots of cruft, then
-replace L<Module::Install> and L<ShipIt> with L<Dist::Milla> for authoring,
-while you don't need to I<add> anything other than a shiny new
-L<cpanfile> (optional), and a simple C<dist.ini> saying:
+replace L<Module::Install> and L<ShipIt> with L<Dist::Zilla> and Milla
+profile for authoring, while you don't need to I<add> anything other
+than a shiny new L<cpanfile> (optional), and a simple C<dist.ini>
+saying:
 
   name = Dist-Name
   [@Milla]
@@ -100,12 +101,11 @@ L<Dist::Milla::Tutorial/MIGRATING> for more details.
 =head1 WHY
 
 A lot of you might have heard of Dist::Zilla. If you already use it
-and love it, then you can stop reading this. But if you're sick of
-maintaing your own PluginBundle and want to switch to someone else's
-good practice, you might want to keep reading.
+and love it, then you can stop reading this, or even using this module
+at all.
 
 If you heard of dzil and think it's overkill or doesn't work for yor
-module, Milla is probably just for you.
+module, Milla might be worth a look.
 
 If you have tried dzil ages ago and thought it was slow, or couldn't
 find how to configure it to do what you want it to do, Milla might be
@@ -119,9 +119,8 @@ First, let me tell you what's great about Dist::Zilla.
 
 Dist::Zilla doesn't do the job of installing of your module. So you
 can focus on the authoring side of things with dzil, while letting
-MakeMaker or Module::Build to do the installation side of things.
-
-I like this design. David Golden also has L<an excellent blog
+MakeMaker or Module::Build to do the installation side of things. I
+like this design. David Golden also has L<an excellent blog
 post|http://www.dagolden.com/index.php/752/why-im-using-distzilla/>
 explaining more details about what this means.
 
@@ -134,7 +133,8 @@ want to accomplish.
 =back
 
 That said, I myself have avoided switching to Dist::Zilla for a long
-time for some reason, and that might be the same with you.
+time for some reason. I actually tried a couple of times, but ended up
+giving up to swithing it.
 
 In my observation, typical problems/dislikes around Dist::Zilla can be
 categorized into one of the following thoughts.
@@ -149,7 +149,7 @@ categorized into one of the following thoughts.
 
 =item Dist::Zilla makes contributing to my module on git very hard
 
-=item Dist::Zilla has too many plugins to begin with
+=item Dist::Zilla is confusing/difficult to use
 
 =back
 
@@ -161,13 +161,12 @@ Let's see how we can address them by using Milla, one at a time.
 
 I think it depends. Moose has been improved a lot for the past few
 years, and your development machine has got a much better CPU and SSD
-as well, hopefully. I personally use Macbook Air late 2011 with Core i7
-and SSD, and running C<dzil nop> with all of Milla plugins loaded
-takes roughly 1.5 second.
+as well, hopefully. For me personally, with all of Milla plugins
+loaded, C<dzil nop> takes roughly 1.5 second.
 
-Because with Milla, you need to run the Dist::Zilla bit only at a
-distribution creation time and release time (more on that later), let me say
-B<it is an acceptable performance>.
+Because with Milla you need to run the Dist::Zilla bit only at a
+distribution creation time and release time (more on that later), let
+me say B<the performance is acceptable>.
 
 =item Dist::Zilla requires too many dependencies
 
@@ -199,9 +198,10 @@ B<With Milla, you don't need to change your workflow>, and it won't
 rewrite your precious C<.pm> files at all. Like C<all_from>, most of
 the metadata is figured out from your module and git, automatically.
 
-Instead of running C<< perl Makefile.PL && make dist && cpan-upload >>, you
-just have to run C<dzil release> and it will figure out all the metadata
-required for PAUSE upload for you.
+Instead of running C<< perl Makefile.PL && make dist && cpan-upload
+>>, you just have to run C<dzil release> and it will figure out all
+the metadata required for PAUSE upload for you, create a tarball,
+upload to CPAN, and push to your git repo.
 
 =item Dist::Zilla makes contributing to my module on git very hard
 
@@ -222,7 +222,7 @@ a pull request just like a normal module.
 
 B<It's just you who has to install Milla>.
 
-=item Dist::Zilla has too many plugins to begin with
+=item Dist::Zilla is confusing/difficult to use
 
 B<That is absolutely right and why Milla exsits>.
 

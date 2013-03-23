@@ -20,9 +20,10 @@ nor requires you to change your workflow at all (Unobtrusive).
 
 Experienced CPAN authors who know how to write CPAN distributions can
 keep writing the code like before, but can remove lots of cruft, then
-replace [Module::Install](http://search.cpan.org/perldoc?Module::Install) and [ShipIt](http://search.cpan.org/perldoc?ShipIt) with [Dist::Milla](http://search.cpan.org/perldoc?Dist::Milla) for authoring,
-while you don't need to _add_ anything other than a shiny new
-[cpanfile](http://search.cpan.org/perldoc?cpanfile) (optional), and a simple `dist.ini` saying:
+replace [Module::Install](http://search.cpan.org/perldoc?Module::Install) and [ShipIt](http://search.cpan.org/perldoc?ShipIt) with [Dist::Zilla](http://search.cpan.org/perldoc?Dist::Zilla) and Milla
+profile for authoring, while you don't need to _add_ anything other
+than a shiny new [cpanfile](http://search.cpan.org/perldoc?cpanfile) (optional), and a simple `dist.ini`
+saying:
 
     name = Dist-Name
     [@Milla]
@@ -82,12 +83,11 @@ You already have distributions with [Module::Install](http://search.cpan.org/per
 # WHY
 
 A lot of you might have heard of Dist::Zilla. If you already use it
-and love it, then you can stop reading this. But if you're sick of
-maintaing your own PluginBundle and want to switch to someone else's
-good practice, you might want to keep reading.
+and love it, then you can stop reading this, or even using this module
+at all.
 
 If you heard of dzil and think it's overkill or doesn't work for yor
-module, Milla is probably just for you.
+module, Milla might be worth a look.
 
 If you have tried dzil ages ago and thought it was slow, or couldn't
 find how to configure it to do what you want it to do, Milla might be
@@ -97,17 +97,16 @@ First, let me tell you what's great about Dist::Zilla.
 
 - Dist::Zilla doesn't do the job of installing of your module. So you
 can focus on the authoring side of things with dzil, while letting
-MakeMaker or Module::Build to do the installation side of things.
-
-    I like this design. David Golden also has [an excellent blog post](http://www.dagolden.com/index.php/752/why-im-using-distzilla/)
-    explaining more details about what this means.
-
+MakeMaker or Module::Build to do the installation side of things. I
+like this design. David Golden also has [an excellent blog post](http://www.dagolden.com/index.php/752/why-im-using-distzilla/)
+explaining more details about what this means.
 - There are so many plugins made by the great CPAN ecosystem, and you
 will most likely find a plugin that is already written, to do what you
 want to accomplish.
 
 That said, I myself have avoided switching to Dist::Zilla for a long
-time for some reason, and that might be the same with you.
+time for some reason. I actually tried a couple of times, but ended up
+giving up to swithing it.
 
 In my observation, typical problems/dislikes around Dist::Zilla can be
 categorized into one of the following thoughts.
@@ -116,7 +115,7 @@ categorized into one of the following thoughts.
 - Dist::Zilla requires too many dependencies
 - Dist::Zilla requires me to change my workflow
 - Dist::Zilla makes contributing to my module on git very hard
-- Dist::Zilla has too many plugins to begin with
+- Dist::Zilla is confusing/difficult to use
 
 Let's see how we can address them by using Milla, one at a time.
 
@@ -124,13 +123,12 @@ Let's see how we can address them by using Milla, one at a time.
 
     I think it depends. Moose has been improved a lot for the past few
     years, and your development machine has got a much better CPU and SSD
-    as well, hopefully. I personally use Macbook Air late 2011 with Core i7
-    and SSD, and running `dzil nop` with all of Milla plugins loaded
-    takes roughly 1.5 second.
+    as well, hopefully. For me personally, with all of Milla plugins
+    loaded, `dzil nop` takes roughly 1.5 second.
 
-    Because with Milla, you need to run the Dist::Zilla bit only at a
-    distribution creation time and release time (more on that later), let me say
-    __it is an acceptable performance__.
+    Because with Milla you need to run the Dist::Zilla bit only at a
+    distribution creation time and release time (more on that later), let
+    me say __the performance is acceptable__.
 
 - Dist::Zilla requires too many dependencies
 
@@ -162,9 +160,9 @@ Let's see how we can address them by using Milla, one at a time.
     rewrite your precious `.pm` files at all. Like `all_from`, most of
     the metadata is figured out from your module and git, automatically.
 
-    Instead of running `perl Makefile.PL && make dist && cpan-upload`, you
-    just have to run `dzil release` and it will figure out all the metadata
-    required for PAUSE upload for you.
+    Instead of running `perl Makefile.PL && make dist && cpan-upload`, you just have to run `dzil release` and it will figure out all
+    the metadata required for PAUSE upload for you, create a tarball,
+    upload to CPAN, and push to your git repo.
 
 - Dist::Zilla makes contributing to my module on git very hard
 
@@ -185,7 +183,7 @@ Let's see how we can address them by using Milla, one at a time.
 
     __It's just you who has to install Milla__.
 
-- Dist::Zilla has too many plugins to begin with
+- Dist::Zilla is confusing/difficult to use
 
     __That is absolutely right and why Milla exsits__.
 

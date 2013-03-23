@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "Mothra",
+   "name" : "Dist-Milla",
    "prereqs" : {
       "configure" : {
          "requires" : {
@@ -58,13 +58,13 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/miyagawa/Mothra/issues"
+         "web" : "https://github.com/miyagawa/Dist-Milla/issues"
       },
-      "homepage" : "https://github.com/miyagawa/Mothra",
+      "homepage" : "https://github.com/miyagawa/Dist-Milla",
       "repository" : {
          "type" : "git",
-         "url" : "https://github.com/miyagawa/Mothra.git",
-         "web" : "https://github.com/miyagawa/Mothra"
+         "url" : "https://github.com/miyagawa/Dist-Milla.git",
+         "web" : "https://github.com/miyagawa/Dist-Milla"
       }
    },
    "version" : "v0.1.4"

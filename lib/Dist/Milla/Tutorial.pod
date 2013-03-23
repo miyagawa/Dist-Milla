@@ -1,15 +1,15 @@
 =head1 NAME
 
-Mothra::Tutorial - Mothra HOW TO
+Dist::Milla::Tutorial - Milla HOW TO
 
 =head1 WORKFLOW
 
 =head2 Setup
 
-Install Mothra and setup your profile.
+Install Milla and setup your profile.
 
-  > cpanm Mothra
-  > moth setup
+  > cpanm Dist::Milla
+  > dzil setup
 
 Setup command will ask you a simple question to make a basic
 profile. If you already have set up C<dzil> before, this is common and
@@ -19,7 +19,7 @@ you can skip the process.
 
 Now it's time to make a new distribution.
 
-  > moth new Dist-Name
+  > dzil new -P Milla Dist-Name
   > cd Dist-Name
 
 At this point, you will have a really simple C<Dist-Name> directory
@@ -44,7 +44,7 @@ boilerplate you want to keep in the git repository so that your github
 repository looks great with README, as well as installable from git
 using C<cpanm> or testable with C<Travis CI>.
 
-  > moth build
+  > dzil build
   > git add Build.PL META.json README.md && git commit -m "git stuff"
 
 =head2 Making the first release
@@ -60,8 +60,8 @@ under C<{{$NEXT}}>, which will be expanded to the next version of your
 module.
 
   > $EDITOR Changes
-  > moth test
-  > moth release
+  > dzil test
+  > dzil release
 
 And your first release is done. The release is tagged on git and all
 the changes atomatically made are committed to git as well.
@@ -74,46 +74,34 @@ a few minutes. Congratulations!
 You have new features, bugs, pull requests and get ready to make a next
 version of your module. Great, making a new release is equally easy.
 
-First, upgrade your module's C<$VERSION> in your C<lib/Dist/Name.pm>.
-
-You can do so by hand with your editor, or use the handy command
-C<moth bumpversion>. This will scan VERSION in your C<.pm> files and
-bump the version.
-
-  > moth bumpversion
+First, make sure all your code has been committed to git and there's
+no dirty files in the working directory.
 
 Then make sure to edit C<Changes> file and contain entries for the
-next release. And commit the changes in the git.
-
-  > $EDITOR Changes
-  > git commit -a -m "release engineering"
+next release under C<{{$NEXT}}>. You don't need to commit the change
+to the C<Changes> file, yet.
 
 Now, make a release!
 
-  > moth test
-  > moth release
+  > dzil test
+  > dzil release
 
-Again, all the remaining changes made by Mothra will be automatically
+The release command will automatically bump the version for you - if
+you have C<0.10>, the next version will be C<0.11>, etc.
+
+If you want to use a different version bump, like a major version up,
+use the C<V> environment variable, like:
+
+  > V=1.0.0 dzil release
+
+This will update C<Changes>, C<META.json> and bump C<$VERSION> in your
+mailn module. These changes made by Milla will be automatically
 committed, tagged and pushed to the remote.
 
 =head1 MIGRATING
 
 This section describes how to migrate your current authoring process
-to Mothra.
-
-=head2 C<moth migrate>
-
-If you use a standard build tool to build a distribution, chances are
-that Mothra can automatically detect and figure out what you need to
-do for you. Just run the command:
-
-  > moth migrate
-
-and it will do the hard work of removing cruft, adding new files and
-ready to git commit them.
-
-If somehow that didn't work, or you like more manual process to know
-what's going on behind the scenes, continue reading.
+to Milla.
 
 =head2 Manually migrating from other build tools
 
@@ -150,7 +138,7 @@ Next, remove unnecessary boilerplate files.
 Next, create a new C<dist.ini> with the following two lines:
 
   name = Dist-Name
-  [@Mothra]
+  [@Milla]
 
 Next, Edit C<.gitignore> and add the following lines:
 
@@ -171,18 +159,18 @@ C<git add> the newly created files and commit it.
 
 Now you're ready to make the first build.
 
-  > moth build
+  > dzil build
 
 and if it was successful, you get a build in a directory called
 C<Dist-Name-v0.1.0> under your current directory. They can be later
-removed with C<moth clean> command.
+removed with C<dzil clean> command.
 
 Also, new C<Build.PL>, C<META.json> and C<README.md> are added in your
 working directory for git-friendliness. C<git add> them and commit it.
 
   > git add Build.PL META.json README.md && git commit -m "git stuff"
 
-Now you're ready to roll a new release with Mothra. Before doing so,
+Now you're ready to roll a new release with Milla. Before doing so,
 convert your C<Changes> file format a little bit, and make sure you
 have a following header in the top:
 
@@ -195,16 +183,16 @@ the I<only> change you're required to make in your code base.
 
 Now, run the release command:
 
-  > moth release
+  > dzil release
 
 to make a new release, in the same way described above for a new
-Mothra setup. When this is not your first release, the version number
-gets automatically bumped by Mothra. If you want to set a speicifc
+Milla setup. When this is not your first release, the version number
+gets automatically bumped by Milla. If you want to set a speicifc
 version for the next release (e.g. you have 0.1.2 and make your next
 release 0.2.0, rather than 0.1.3), use C<V> environment variable with
 the release command:
 
-  > V=0.2.0 moth release
+  > V=0.2.0 dzil release
 
 =head1 UPGRADING
 
@@ -216,6 +204,6 @@ Tatsuhiko Miyagawa
 
 =head1 SEE ALSO
 
-L<Mothra>
+L<Dist::Milla>
 
 =cut

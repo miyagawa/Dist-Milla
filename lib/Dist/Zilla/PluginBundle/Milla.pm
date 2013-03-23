@@ -1,4 +1,4 @@
-package Dist::Zilla::PluginBundle::Mothra;
+package Dist::Zilla::PluginBundle::Milla;
 use Moose;
 with 'Dist::Zilla::Role::PluginBundle::Easy';
 
@@ -65,23 +65,23 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::PluginBundle::Mothra - Dist::Zilla plugin defaults for Mothra
+Dist::Zilla::PluginBundle::Milla - Dist::Zilla plugin defaults for Milla
 
 =head1 SYNOPSIS
 
   # dist.ini
-  [@Mothra]
+  [@Milla]
 
 =head1 DESCRIPTION
 
 This is a Dist::Zilla plugin bundle that implements the opinionated build
-process of L<Mothra>. Roughly equivalent to:
+process of Milla. Roughly equivalent to:
 
   # TBD
 
 =head1 SEE ALSO
 
-L<Mothra>
+L<Dist::Milla>
 
 =cut
 

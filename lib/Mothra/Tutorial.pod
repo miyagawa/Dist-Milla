@@ -155,6 +155,7 @@ Next, create a new C<dist.ini> with the following two lines:
 Next, Edit C<.gitignore> and add the following lines:
 
   /Dist-Name-*
+  /.build
   !META.json
 
 You're almost done, and your directory will look like:

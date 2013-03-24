@@ -16,6 +16,7 @@ requires 'Dist::Zilla::Plugin::Manifest';
 requires 'Dist::Zilla::Plugin::MetaJSON';
 requires 'Dist::Zilla::Plugin::MetaYAML';
 requires 'Dist::Zilla::Plugin::ModuleBuildTiny';
+requires 'Dist::Zilla::Plugin::NameFromDirectory';
 requires 'Dist::Zilla::Plugin::NextRelease';
 requires 'Dist::Zilla::Plugin::PodSyntaxTests';
 requires 'Dist::Zilla::Plugin::Prereqs::FromCPANfile';

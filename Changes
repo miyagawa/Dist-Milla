@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v0.1.6  2013-03-23 20:46:35 PDT
+        - Change header for the next release
+
 v0.1.5    2013-03-23 20:33:34 America/Los_Angeles
         - Support FAKE_RELEASE environment variable
         - Add installer option

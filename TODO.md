@@ -14,4 +14,4 @@
 - [ ] Travis?
 - [x] mymeta-cpanfile
 - [ ] TDZ for ReversionOnRelease
-- [ ] Change the format for Changes file header
+- [x] Change the format for Changes file header

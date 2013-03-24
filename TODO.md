@@ -9,7 +9,8 @@
 - [x] Move to Tutorial.pod
 - [x] doc: workflow
 - [x] doc: migration
-- [ ] Commit to git upon init?
+- [ ] Commit/Add to git upon init?
+- [ ] prompt on Reversion
 - [ ] better support 'perl' in cpanfile in cpanm and Carton
 - [ ] Travis?
 - [x] mymeta-cpanfile

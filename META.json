@@ -40,6 +40,7 @@
             "Dist::Zilla::Plugin::MetaJSON" : "0",
             "Dist::Zilla::Plugin::MetaYAML" : "0",
             "Dist::Zilla::Plugin::ModuleBuildTiny" : "0",
+            "Dist::Zilla::Plugin::NameFromDirectory" : "0",
             "Dist::Zilla::Plugin::NextRelease" : "0",
             "Dist::Zilla::Plugin::PodSyntaxTests" : "0",
             "Dist::Zilla::Plugin::Prereqs::FromCPANfile" : "0",
@@ -51,6 +52,7 @@
             "Dist::Zilla::Plugin::UploadToCPAN" : "0",
             "Dist::Zilla::Plugin::VersionFromModule" : "0",
             "Dist::Zilla::PluginBundle::Git" : "0",
+            "Module::CPANfile" : "0.9024",
             "perl" : "5.008001"
          }
       }
@@ -67,6 +69,6 @@
          "web" : "https://github.com/miyagawa/Dist-Milla"
       }
    },
-   "version" : "v0.1.6"
+   "version" : "v0.1.7"
 }
 

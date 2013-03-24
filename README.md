@@ -210,10 +210,25 @@ Because I _think_ this can be recommended for many people, and want
 to make it better by incorporating contributions, I gave it a
 different name other than my own personal name bundle.
 
+### Dist::Zila feels overkill. If you don't munge code/docs, what's the point?
+
+I agree that it is still overkill. But as of this writing, there's no
+software other than Dist::Zilla that can correctly create a CPAN style
+distribution other than [ExtUtils::MakeMaker](http://search.cpan.org/perldoc?ExtUtils::MakeMaker) and [Module::Build](http://search.cpan.org/perldoc?Module::Build),
+and I think they're wrong tool for _authoring_ distributions.
+
+Check out [Minilla](http://search.cpan.org/perldoc?Minilla) if you think Dist::Zilla is overkill and want a
+lightweight replacement that does the same thing.
+
 ### Milla?
 
-The name is taken as a mashup between [Dist::Zilla](http://search.cpan.org/perldoc?Dist::Zilla) and our sister
-project [Minilla](http://search.cpan.org/perldoc?Minilla). It also should remind you of Milla Jovovich.
+[Minilla](http://search.cpan.org/perldoc?Minilla) is a son of Godzilla. This distribtion builder is just a
+Dist::Zilla in the core, but acts like Minilla does. Hence the name
+Milla.
+
+Milla should also remind you of Milla Jovovich, but I couldn't make up
+any correlation about it, besides Resident Evil is such a great
+videogame and movie.
 
 # AUTHOR
 

@@ -27,4 +27,5 @@ requires 'Dist::Zilla::Plugin::Test::Compile';
 requires 'Dist::Zilla::Plugin::TestRelease';
 requires 'Dist::Zilla::Plugin::UploadToCPAN';
 requires 'Dist::Zilla::Plugin::VersionFromModule';
+requires 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
 requires 'Dist::Zilla::PluginBundle::Git';

@@ -74,7 +74,7 @@ sub configure {
         [ 'CopyFilesFromRelease', { match => '\.pm$' } ],
         [ 'Git::Commit', {
             commit_msg => '%v',
-            allow_dirty => [ 'dist.ini', 'Changes', 'META.json' ],
+            allow_dirty => [ 'dist.ini', 'Changes', 'META.json', $self->build_file ],
             allow_dirty_match => '\.pm$', # .pm files copied back from Release
         } ],
         [ 'Git::Tag', { tag_format => '%v', tag_message => '' } ],

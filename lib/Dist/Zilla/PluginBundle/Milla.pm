@@ -44,7 +44,7 @@ sub configure {
         # after ReversionOnRelease for munge_files, before Git::Commit for after_release
         [ 'NextRelease' ],
 
-        [ 'Git::Check', { allow_dirty => [ 'dist.ini', 'Changes', 'META.json' ] } ],
+        [ 'Git::Check', { allow_dirty => [ 'dist.ini', 'Changes', 'META.json', $self->build_file ] } ],
 
         # Make Github center and front
         [ 'GithubMeta', { issues => 1 } ],

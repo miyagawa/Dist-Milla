@@ -2,6 +2,7 @@
 - [ ] ProfileProvider for the defaults dzil new -P Milla
 - [x] NameFromDir
 - [ ] --install-command=cpanm override
+- [ ] do not override copyright, license author with ~/.dzil profile for someone else's code
 - [x] bumpversion command
 - [ ] migrate command
 - [x] support installer=
@@ -14,6 +15,10 @@
 - [ ] better support 'perl' in cpanfile in cpanm and Carton
 - [ ] Travis?
 - [x] mymeta-cpanfile
+- [ ] support sharedir with Makefile.PL
 - [ ] Add mymeta-cpanfile to Tutorial
 - [ ] TDZ for ReversionOnRelease
 - [x] Change the format for Changes file header
+- [ ] remove boilerplate from dist.ini?
+
+

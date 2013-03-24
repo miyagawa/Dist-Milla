@@ -2,6 +2,10 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v0.1.5    2013-03-23 20:33:34 America/Los_Angeles
+        - Support FAKE_RELEASE environment variable
+        - Add installer option
+        
 v0.1.4    2013-03-22 17:04:58 America/Los_Angeles
         - Internal
 

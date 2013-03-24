@@ -12,6 +12,6 @@
 - [ ] Commit to git upon init?
 - [ ] better support 'perl' in cpanfile in cpanm and Carton
 - [ ] Travis?
-- [ ] mymeta-cpanfile
+- [x] mymeta-cpanfile
 - [ ] TDZ for ReversionOnRelease
-
+- [ ] Change the format for Changes file header

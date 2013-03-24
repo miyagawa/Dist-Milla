@@ -1,18 +1,41 @@
 package Dist::Zilla::PluginBundle::Milla;
 use Moose;
-with 'Dist::Zilla::Role::PluginBundle::Easy';
+with 'Dist::Zilla::Role::PluginBundle::Easy',
+     'Dist::Zilla::Role::PluginBundle::Config::Slicer';
 
+use Moose::Util::TypeConstraints;
 use namespace::autoclean;
+
+has installer => (
+    is => 'ro',
+    isa => 'Str',
+    lazy => 1,
+    default => sub { $_[0]->payload->{installer} || 'ModuleBuildTiny' },
+);
+
+sub build_file {
+    my $self = shift;
+    $self->installer eq 'MakeMaker' ? 'Makefile.PL' : 'Build.PL';
+}
 
 sub configure {
     my $self = shift;
+
+    my @accepts = qw( MakeMaker ModuleBuild ModuleBuildTiny );
+    my %accepts = map { $_ => 1 } @accepts;
+
+    unless ($accepts{$self->installer}) {
+        die sprintf("Unknown installer: '%s'. " .
+                    "Acceptable values are MakeMaker, ModuleBuild and ModuleBuildTiny\n",
+                    $self->installer);
+    }
 
     $self->add_plugins(
         [ 'NameFromDirectory' ],
 
         # Make the git repo installable
-        [ 'Git::GatherDir', { exclude_filename => [ 'Build.PL', 'META.json', 'README.md' ] } ],
-        [ 'CopyFilesFromBuild', { copy => [ 'META.json', 'Build.PL' ] } ],
+        [ 'Git::GatherDir', { exclude_filename => [ $self->build_file, 'META.json', 'README.md' ] } ],
+        [ 'CopyFilesFromBuild', { copy => [ 'META.json', $self->build_file ] } ],
 
         # should be after GatherDir
         [ 'VersionFromModule' ],
@@ -27,9 +50,9 @@ sub configure {
         [ 'GithubMeta', { issues => 1 } ],
         [ 'ReadmeAnyFromPod', { type => 'markdown', filename => 'README.md', location => 'root' } ],
 
-        # cpanfile + MB::Tiny
+        # cpanfile -> META.json
         [ 'Prereqs::FromCPANfile' ],
-        [ 'ModuleBuildTiny' ],
+        [ $self->installer ],
         [ 'MetaJSON' ],
 
         # standard stuff
@@ -71,8 +94,10 @@ Dist::Zilla::PluginBundle::Milla - Dist::Zilla plugin defaults for Milla
 
 =head1 SYNOPSIS
 
-  # dist.ini
+  ; dist.ini
+  name = Dist-Name
   [@Milla]
+  installer = MakeMaker
 
 =head1 DESCRIPTION
 

@@ -4,7 +4,7 @@
 - [ ] --install-command=cpanm override
 - [x] bumpversion command
 - [ ] migrate command
-- [ ] support installer=
+- [x] support installer=
 - [x] doc: rationale
 - [x] Move to Tutorial.pod
 - [x] doc: workflow

@@ -42,7 +42,7 @@ sub configure {
         [ 'ReversionOnRelease' ],
 
         # after ReversionOnRelease for munge_files, before Git::Commit for after_release
-        [ 'NextRelease' ],
+        [ 'NextRelease', { format => '%v  %{yyyy-MM-dd HH:mm:ss VVV}d' } ],
 
         [ 'Git::Check', { allow_dirty => [ 'dist.ini', 'Changes', 'META.json', $self->build_file ] } ],
 

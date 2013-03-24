@@ -13,5 +13,6 @@
 - [ ] better support 'perl' in cpanfile in cpanm and Carton
 - [ ] Travis?
 - [x] mymeta-cpanfile
+- [ ] Add mymeta-cpanfile to Tutorial
 - [ ] TDZ for ReversionOnRelease
 - [x] Change the format for Changes file header

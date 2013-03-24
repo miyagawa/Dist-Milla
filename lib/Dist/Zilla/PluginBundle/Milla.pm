@@ -3,7 +3,6 @@ use Moose;
 with 'Dist::Zilla::Role::PluginBundle::Easy',
      'Dist::Zilla::Role::PluginBundle::Config::Slicer';
 
-use Moose::Util::TypeConstraints;
 use namespace::autoclean;
 
 has installer => (

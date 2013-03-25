@@ -87,12 +87,9 @@ Now, make a release!
   > dzil release
 
 The release command will automatically bump the version for you - if
-you have C<0.10>, the next version will be C<0.11>, etc.
-
-If you want to use a different version bump, like a major version up,
-use the C<V> environment variable, like:
-
-  > V=1.0.0 dzil release
+you have C<0.10>, the next version will be C<0.11> by default, but you
+will be prompted to confirm that version in case you need a major
+bump.
 
 This will update C<Changes>, C<META.json> and bump C<$VERSION> in your
 mailn module. These changes made by Milla will be automatically
@@ -214,12 +211,9 @@ Now, run the release command:
 
 to make a new release, in the same way described above for a new
 Milla setup. When this is not your first release, the version number
-gets automatically bumped by Milla. If you want to set a speicifc
-version for the next release (e.g. you have 0.1.2 and make your next
-release 0.2.0, rather than 0.1.3), use C<V> environment variable with
-the release command:
-
-  > V=0.2.0 dzil release
+gets automatically bumped by Milla, but you will be prompted if that
+is exactly the version you want, and if you want a major version up,
+you can specify to do so.
 
 =head1 UPGRADING
 

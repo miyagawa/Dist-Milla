@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v0.1.11  2013-03-25 01:28:53 PDT
+        - Keep the empty line in reversion
+
 v0.1.10  2013-03-24 23:30:00 PDT
         - Added 'script' dir to ExecDir
 

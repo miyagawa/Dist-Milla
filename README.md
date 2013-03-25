@@ -222,7 +222,7 @@ Because I _think_ this can be recommended for many people, and want
 to make it better by incorporating contributions, I gave it a
 different name other than my own personal name bundle.
 
-### Dist::Zila feels overkill. If you don't munge code/docs, what's the point?
+### Dist::Zilla feels overkill. If you don't munge code/docs, what's the point?
 
 I agree that it is still overkill. But as of this writing, there's no
 software other than Dist::Zilla that can correctly create a CPAN style

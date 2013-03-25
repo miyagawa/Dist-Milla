@@ -66,7 +66,7 @@ sub configure {
         [ 'License' ],
         [ 'ReadmeFromPod' ],
         [ 'ExtraTests' ],
-        [ 'ExecDir' ],
+        [ 'ExecDir', { dir => 'script' } ],
         [ 'ShareDir' ],
         [ 'Manifest' ],
 

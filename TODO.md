@@ -16,9 +16,8 @@
 - [ ] Travis?
 - [x] mymeta-cpanfile
 - [ ] support sharedir with Makefile.PL
-- [ ] Add mymeta-cpanfile to Tutorial
+- [x] Add mymeta-cpanfile to Tutorial
 - [ ] TDZ for ReversionOnRelease
 - [x] Change the format for Changes file header
 - [ ] remove boilerplate from dist.ini?
-
 

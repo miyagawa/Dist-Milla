@@ -110,8 +110,30 @@ to Milla.
 First, move the prereq declaration from C<Makefile.PL> or C<Build.PL>
 to C<cpanfile>.
 
-L<cpanfile> is mostly compatible to L<Module::Install>'s requirement
-DSL, so you can just copy them over to C<cpanfile>.
+The easiest way to convert existing dependencies to cpanfile is to use
+the command line tool C<mymeta-cpanfile>, which is installed with
+L<Module::CPANfile>. Run the configuration with C<Makefile.PL> for the
+one last time, then run the C<mymeta-cpanfile> command:
+
+  > perl Makefile.PL
+  > mymeta-cpanfile --no-configure
+  requires 'DBI', '1.000';
+  
+  on test => sub {
+      requires 'Test::More', '0.86';
+  }
+  
+  ...
+
+You can redirect the output to C<cpanfile> if you like. It is
+important to pass C<--no-configure> option here, since otherwise
+modules like ExtUtils::MakeMaker will be included. It is not required
+with Milla setup, since Milla knows which configuration tool
+(installer) to use and include them in META files upon the
+releases. You can leave that out from the C<cpanfile>.
+
+If you decide to manually construct new cpanfile, the formt is mostly
+compatible to L<Module::Install>'s requirement DSL.
 
   # Makefile.PL
   test_requires 'Test::More', 0.90;

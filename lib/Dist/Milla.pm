@@ -264,9 +264,11 @@ lightweight replacement that does the same thing.
 
 =head3 Milla?
 
-As stated above, I've been loving the cleverness of Module::Install,
+As stated above, I've been loving the cleverness of Module::Install (MI),
 but felt its limitation. Milla is an attempt to put Module::Install's
-smartness into Dist::Zilla (without the C<inc> mess), hence the name.
+smartness into Dist::Zilla (without the C<inc> mess).
+
+M::I + Zilla = Milla.
 
 Milla should also remind you of Milla Jovovich, but I couldn't make up
 any correlation about it, besides Resident Evil is such a great

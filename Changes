@@ -2,6 +2,10 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v0.1.9  2013-03-24 23:00:35 PDT
+        - Added LicenseFromModule
+        - Added a bit more verbose logging in ReversionOnRelease
+
 v0.1.8  2013-03-24 17:29:35 PDT
         - Allow README to be dirty
         - Added prompt to ReversionOnRelease

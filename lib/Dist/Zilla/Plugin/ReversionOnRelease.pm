@@ -55,15 +55,15 @@ sub reversion {
         $self->log("Overriding VERSION to $ENV{V}");
         $new_ver->set($ENV{V});
     } elsif ($self->is_released($new_ver)) {
+        $self->log_debug("$new_ver is released. Bumping it");
         if ($new_ver->is_alpha) {
             $new_ver->inc_alpha;
         } else {
             my $pos = $new_ver->components - 1;
             $new_ver->increment($pos);
         }
-        $self->log("Bumping version to $new_ver");
     } else {
-        $self->log("$new_ver is not released yet. No need to bump");
+        $self->log_debug("$new_ver is not released yet. No need to bump");
     }
 
     $new_ver;

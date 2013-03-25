@@ -10,8 +10,8 @@
 - [x] Move to Tutorial.pod
 - [x] doc: workflow
 - [x] doc: migration
-- [ ] Commit/Add to git upon init?
-- [ ] prompt on Reversion
+- [ ] Commit/Add to git upon init? https://github.com/madsen/dist-zilla-plugin-git/pull/9
+- [x] prompt on Reversion
 - [ ] better support 'perl' in cpanfile in cpanm and Carton
 - [ ] Travis?
 - [x] mymeta-cpanfile

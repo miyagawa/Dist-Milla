@@ -80,6 +80,8 @@ You already have distributions with [Module::Install](http://search.cpan.org/per
 
 # WHY
 
+# WHY Dist::Zilla
+
 A lot of you might have heard of Dist::Zilla. If you already use it
 and love it, then you can stop reading this, or even using this module
 at all.
@@ -184,6 +186,16 @@ Let's see how we can address them by using Milla, one at a time.
     people, and you don't need to waste time configuring your PluginBundle
     or searching for the plugin you need.
 
+## WHY NOT Module::Install
+
+I loved Module::Install. I love how it automatically figures out what
+I want to do with a single `all_from` line. I liked the cleverness of
+its bundling itself into `inc`. But I know many collaborators hated
+it because you have no idea what plugins have to be installed when you
+use some funky plugins, and your users are puzzled when they try to
+install from the git repository because it says `Can't locate
+inc/Module/Install.pm`.
+
 # FAQ
 
 ### So you basically wrote a simple PluginBundle and some wrapper, and give that a name?
@@ -222,9 +234,9 @@ lightweight replacement that does the same thing.
 
 ### Milla?
 
-[Minilla](http://search.cpan.org/perldoc?Minilla) is a son of Godzilla. This distribtion builder is just a
-Dist::Zilla in the core, but acts like Minilla does. Hence the name
-Milla.
+As stated above, I've been loving the cleverness of Module::Install,
+but felt its limitation. Milla is an attempt to put Module::Install's
+smartness into Dist::Zilla (without the `inc` mess), hence the name.
 
 Milla should also remind you of Milla Jovovich, but I couldn't make up
 any correlation about it, besides Resident Evil is such a great

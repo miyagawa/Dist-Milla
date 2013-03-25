@@ -2,6 +2,10 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v0.1.8  2013-03-24 17:29:35 PDT
+        - Allow README to be dirty
+        - Added prompt to ReversionOnRelease
+
 v0.1.7  2013-03-23 23:13:36 PDT
         - Separate NameFromDirectory as a CPAN module
 

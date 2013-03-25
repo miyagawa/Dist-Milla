@@ -10,6 +10,8 @@ with(
     },
 );
 
+has 'prompt' => (is => 'ro', isa => 'Bool', default => 0);
+
 # from perl-reversion
 my $VersionRegexp = Perl::Version::REGEX;
 $VersionRegexp =
@@ -24,8 +26,21 @@ sub munge_files {
     return unless $ENV{DZIL_RELEASING};
 
     my $version = $self->reversion;
-    $self->munge_file($_, $version) for @{ $self->found_files };
 
+    if ($self->prompt) {
+        my $given_version = $self->zilla->chrome->prompt_str(
+            "Next release version? ", {
+                default => "$version",
+                check => sub {
+                    eval { Perl::Version->new($_[0]); 1 },
+                },
+            },
+        );
+
+        $version->set($given_version);
+    }
+
+    $self->munge_file($_, $version) for @{ $self->found_files };
     $self->zilla->version("$version");
 
     return;

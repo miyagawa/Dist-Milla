@@ -38,7 +38,7 @@ sub configure {
 
         # should be after GatherDir
         [ 'VersionFromModule' ],
-        [ 'ReversionOnRelease' ],
+        [ 'ReversionOnRelease', { prompt => 1 } ],
 
         # after ReversionOnRelease for munge_files, before Git::Commit for after_release
         [ 'NextRelease', { format => '%v  %{yyyy-MM-dd HH:mm:ss VVV}d' } ],

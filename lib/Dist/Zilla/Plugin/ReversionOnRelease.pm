@@ -128,7 +128,7 @@ sub munge_file {
 
     my $munged;
 
-    my @content = split /\n/, $file->content;
+    my @content = split /\n/, $file->content, -1;
     for (@content) {
         $scanner->($_) && $munged++;
     }

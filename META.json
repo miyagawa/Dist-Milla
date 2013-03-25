@@ -53,7 +53,7 @@
             "Dist::Zilla::Plugin::VersionFromModule" : "0",
             "Dist::Zilla::PluginBundle::Git" : "0",
             "Dist::Zilla::Role::PluginBundle::Config::Slicer" : "0",
-            "Module::CPANfile" : "0.9024",
+            "Module::CPANfile" : "0.9025",
             "perl" : "5.008001"
          }
       }
@@ -70,6 +70,6 @@
          "web" : "https://github.com/miyagawa/Dist-Milla"
       }
    },
-   "version" : "v0.1.9"
+   "version" : "v0.1.10"
 }
 

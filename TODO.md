@@ -15,7 +15,7 @@
 - [ ] better support 'perl' in cpanfile in cpanm and Carton
 - [ ] Travis?
 - [x] mymeta-cpanfile
-- [ ] support sharedir with Makefile.PL
+- [x] support sharedir with Makefile.PL
 - [x] Add mymeta-cpanfile to Tutorial
 - [ ] TDZ for ReversionOnRelease
 - [x] Change the format for Changes file header

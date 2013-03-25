@@ -91,10 +91,9 @@ sub author_from {
             $author =~ s{E<gt>}{>}g;
         }
         return $author;
-    } else {
-        warn "Cannot determine author info from @{[ $_[0]->source ]}\n";
-        return;
     }
+
+    return;
 }
 
 sub copyright_year_from {

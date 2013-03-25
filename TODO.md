@@ -2,7 +2,7 @@
 - [ ] ProfileProvider for the defaults dzil new -P Milla
 - [x] NameFromDir
 - [ ] --install-command=cpanm override
-- [ ] do not override copyright, license author with ~/.dzil profile for someone else's code
+- [x] do not override copyright, license author with ~/.dzil profile for someone else's code
 - [x] bumpversion command
 - [ ] migrate command
 - [x] support installer=

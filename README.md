@@ -25,7 +25,6 @@ profile for authoring, while you don't need to _add_ anything other
 than a shiny new [cpanfile](http://search.cpan.org/perldoc?cpanfile) (optional), and a simple `dist.ini`
 saying:
 
-    name = Dist-Name
     [@Milla]
 
 and that's it.
@@ -234,9 +233,11 @@ lightweight replacement that does the same thing.
 
 ### Milla?
 
-As stated above, I've been loving the cleverness of Module::Install,
+As stated above, I've been loving the cleverness of Module::Install (MI),
 but felt its limitation. Milla is an attempt to put Module::Install's
-smartness into Dist::Zilla (without the `inc` mess), hence the name.
+smartness into Dist::Zilla (without the `inc` mess).
+
+M::I + Zilla = Milla.
 
 Milla should also remind you of Milla Jovovich, but I couldn't make up
 any correlation about it, besides Resident Evil is such a great

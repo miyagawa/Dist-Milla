@@ -20,4 +20,4 @@
 - [ ] TDZ for ReversionOnRelease
 - [x] Change the format for Changes file header
 - [ ] remove boilerplate from dist.ini?
-
+- [ ] DZIL_CONFIRMRELEASE_DEFAULT=1

@@ -35,7 +35,6 @@ profile for authoring, while you don't need to I<add> anything other
 than a shiny new L<cpanfile> (optional), and a simple C<dist.ini>
 saying:
 
-  name = Dist-Name
   [@Milla]
 
 and that's it.

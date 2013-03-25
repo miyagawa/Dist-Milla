@@ -39,7 +39,10 @@ sub configure {
         [ 'CopyFilesFromBuild', { copy => [ 'META.json', $self->build_file ] } ],
 
         # should be after GatherDir
+        # Equivalent to Module::Install's version_from, license_from and author_from
         [ 'VersionFromModule' ],
+        [ 'LicenseFromModule' ],
+
         [ 'ReversionOnRelease', { prompt => 1 } ],
 
         # after ReversionOnRelease for munge_files, before Git::Commit for after_release

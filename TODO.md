@@ -17,7 +17,8 @@
 - [x] mymeta-cpanfile
 - [x] support sharedir with Makefile.PL
 - [x] Add mymeta-cpanfile to Tutorial
-- [ ] TDZ for ReversionOnRelease
+- [ ] extract ReversionOnRelease
 - [x] Change the format for Changes file header
 - [ ] remove boilerplate from dist.ini?
 - [ ] DZIL_CONFIRMRELEASE_DEFAULT=1
+- [ ] extract LicenseFromModule

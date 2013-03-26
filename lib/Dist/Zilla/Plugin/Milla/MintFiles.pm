@@ -37,6 +37,8 @@ ___[ .gitignore ]___
 MYMETA.*
 !META.json
 ___[ cpanfile ]___
+requires 'perl', '5.008005';
+
 # requires 'Some::Module', 'VERSION';
 
 on test => sub {

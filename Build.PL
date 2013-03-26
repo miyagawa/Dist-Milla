@@ -44,6 +44,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::Prereqs::FromCPANfile" => 0,
     "Dist::Zilla::Plugin::ReadmeAnyFromPod" => 0,
     "Dist::Zilla::Plugin::ReadmeFromPod" => 0,
+    "Dist::Zilla::Plugin::ReversionOnRelease" => 0,
     "Dist::Zilla::Plugin::ShareDir" => 0,
     "Dist::Zilla::Plugin::Test::Compile" => 0,
     "Dist::Zilla::Plugin::TestRelease" => 0,
@@ -52,7 +53,7 @@ my %module_build_args = (
     "Dist::Zilla::PluginBundle::Git" => 0,
     "Dist::Zilla::Role::PluginBundle::Config::Slicer" => 0,
     "Module::CPANfile" => "0.9025",
-    "perl" => "5.008001"
+    "perl" => "5.008005"
   },
   "script_files" => [
     "script/milla"

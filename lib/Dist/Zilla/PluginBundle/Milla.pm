@@ -29,7 +29,7 @@ sub configure {
                     $self->installer);
     }
 
-    my $dirty_files = [ 'dist.ini', 'Changes', 'META.json', 'README.md', $self->build_file ];
+    my @dirty_files = ('dist.ini', 'Changes', 'META.json', 'README.md', $self->build_file);
 
     $self->add_plugins(
         [ 'NameFromDirectory' ],
@@ -48,7 +48,7 @@ sub configure {
         # after ReversionOnRelease for munge_files, before Git::Commit for after_release
         [ 'NextRelease', { format => '%v  %{yyyy-MM-dd HH:mm:ss VVV}d' } ],
 
-        [ 'Git::Check', { allow_dirty => $dirty_files } ],
+        [ 'Git::Check', { allow_dirty => \@dirty_files } ],
 
         # Make Github center and front
         [ 'GithubMeta', { issues => 1 } ],
@@ -78,7 +78,7 @@ sub configure {
         [ 'CopyFilesFromRelease', { match => '\.pm$' } ],
         [ 'Git::Commit', {
             commit_msg => '%v',
-            allow_dirty => $dirty_files,
+            allow_dirty => \@dirty_files,
             allow_dirty_match => '\.pm$', # .pm files copied back from Release
         } ],
         [ 'Git::Tag', { tag_format => '%v', tag_message => '' } ],

@@ -1,25 +1,8 @@
 #!perl
 use strict;
-use Dist::Zilla::App;
+use Dist::Milla::App;
 
-mangle_args(\@ARGV);
-
-Dist::Zilla::App->run;
-
-sub mangle_args {
-    my $argv = shift;
-
-    # TODO: doesn't work if -Ilib / -v is used
-
-    if ($argv->[0] eq 'install') {
-        splice @$argv, 1, 0, '--install-command=cpanm .';
-    } elsif ($argv->[0] eq 'release') {
-        $ENV{DZIL_CONFIRMRELEASE_DEFAULT} = 1
-          unless defined $ENV{DZIL_CONFIRMRELEASE_DEFAULT};
-    } elsif ($argv->[0] eq 'new') {
-        splice @$argv, 1, 0, '-P', 'Milla';
-    }
-}
+Dist::Milla::App->run;
 
 __END__
 

@@ -1,0 +1,15 @@
+#!perl
+use strict;
+use warnings;
+use Dist::Zilla::App;
+
+Dist::Zilla::App->run;
+
+__END__
+
+=head1 NAME
+
+milla - wrapper for Milla profile
+
+=cut
+

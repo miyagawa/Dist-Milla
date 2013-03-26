@@ -4,7 +4,6 @@
 - [x] --install-command=cpanm override
 - [x] do not override copyright, license author with ~/.dzil profile for someone else's code
 - [x] bumpversion command
-- [ ] migrate command
 - [x] support installer=
 - [x] doc: rationale
 - [x] Move to Tutorial.pod
@@ -13,12 +12,15 @@
 - [x] Commit/Add to git upon init? https://github.com/madsen/dist-zilla-plugin-git/pull/9
 - [x] prompt on Reversion
 - [ ] better support 'perl' in cpanfile in cpanm and Carton
+- [ ] migrate command
+- [ ] document github create
 - [ ] Travis?
+- [x] .gitignore
 - [x] mymeta-cpanfile
 - [x] support sharedir with Makefile.PL
 - [x] Add mymeta-cpanfile to Tutorial
 - [ ] extract ReversionOnRelease
 - [x] Change the format for Changes file header
-- [ ] remove boilerplate from dist.ini?
+- [x] remove boilerplate from dist.ini?
 - [x] DZIL_CONFIRMRELEASE_DEFAULT=1
 - [ ] extract LicenseFromModule

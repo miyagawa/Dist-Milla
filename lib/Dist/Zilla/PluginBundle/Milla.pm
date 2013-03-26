@@ -60,6 +60,9 @@ sub configure {
         [ $self->installer ],
         [ 'MetaJSON' ],
 
+        # Advertise Milla
+        [ 'Milla::MetaGeneratedBy' ],
+
         # standard stuff
         [ 'PodSyntaxTests' ],
         [ 'Test::Compile' ],

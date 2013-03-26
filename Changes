@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v0.1.15  2013-03-26 10:43:04 PDT
+        - Properly support subclassing Dist::Zilla::App (rjbs++)
+
 v0.1.14  2013-03-26 02:30:15 PDT
         - Add .gitignore and .travis.yml in Minting
 

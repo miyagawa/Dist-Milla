@@ -14,7 +14,7 @@
 - [ ] better support 'perl' in cpanfile in cpanm and Carton
 - [ ] migrate command
 - [ ] document github create
-- [x] Travis?
+- [ ] generate Travis?
 - [x] .gitignore
 - [x] mymeta-cpanfile
 - [x] support sharedir with Makefile.PL

@@ -30,7 +30,7 @@ sub configure {
     }
 
     my @dirty_files = ('dist.ini', 'Changes', 'META.json', 'README.md', $self->build_file);
-    my @exclude_release = ('README.md', '.travis.yml');
+    my @exclude_release = ('README.md');
 
     $self->add_plugins(
         [ 'NameFromDirectory' ],

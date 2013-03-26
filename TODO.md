@@ -1,7 +1,7 @@
 - [x] package PluginBundle
-- [ ] ProfileProvider for the defaults dzil new -P Milla
+- [x] MintingProfile for the defaults dzil new -P Milla
 - [x] NameFromDir
-- [ ] --install-command=cpanm override
+- [x] --install-command=cpanm override
 - [x] do not override copyright, license author with ~/.dzil profile for someone else's code
 - [x] bumpversion command
 - [ ] migrate command
@@ -10,7 +10,7 @@
 - [x] Move to Tutorial.pod
 - [x] doc: workflow
 - [x] doc: migration
-- [ ] Commit/Add to git upon init? https://github.com/madsen/dist-zilla-plugin-git/pull/9
+- [x] Commit/Add to git upon init? https://github.com/madsen/dist-zilla-plugin-git/pull/9
 - [x] prompt on Reversion
 - [ ] better support 'perl' in cpanfile in cpanm and Carton
 - [ ] Travis?
@@ -20,5 +20,5 @@
 - [ ] extract ReversionOnRelease
 - [x] Change the format for Changes file header
 - [ ] remove boilerplate from dist.ini?
-- [ ] DZIL_CONFIRMRELEASE_DEFAULT=1
+- [x] DZIL_CONFIRMRELEASE_DEFAULT=1
 - [ ] extract LicenseFromModule

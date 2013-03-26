@@ -7,9 +7,11 @@ use Dist::Milla;
 sub metadata {
     my $self = shift;
 
+    my $generated_by = sprintf "Dist::Milla version %s, Dist::Zilla version %s",
+      Dist::Milla->VERSION, $self->zilla->VERSION;
+
     return {
-        generated_by => "Dist::Milla version "
-          . (defined Dist::Milla->VERSION ? Dist::Milla->VERSION : '(undef)'),
+        generated_by => $generated_by,
     };
 }
 

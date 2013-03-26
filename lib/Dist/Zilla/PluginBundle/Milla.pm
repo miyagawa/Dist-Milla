@@ -30,12 +30,13 @@ sub configure {
     }
 
     my @dirty_files = ('dist.ini', 'Changes', 'META.json', 'README.md', $self->build_file);
+    my @exclude_release = ('README.md', '.travis.yml');
 
     $self->add_plugins(
         [ 'NameFromDirectory' ],
 
         # Make the git repo installable
-        [ 'Git::GatherDir', { exclude_filename => [ $self->build_file, 'META.json', 'README.md' ] } ],
+        [ 'Git::GatherDir', { exclude_filename => [ $self->build_file, 'META.json', @exclude_release ] } ],
         [ 'CopyFilesFromBuild', { copy => [ 'META.json', $self->build_file ] } ],
 
         # should be after GatherDir

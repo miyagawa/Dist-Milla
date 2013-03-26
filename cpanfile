@@ -12,6 +12,7 @@ requires 'Dist::Zilla::Plugin::ExtraTests';
 requires 'Dist::Zilla::Plugin::Git::GatherDir';
 requires 'Dist::Zilla::Plugin::GithubMeta';
 requires 'Dist::Zilla::Plugin::License';
+requires 'Dist::Zilla::Plugin::LicenseFromModule';
 requires 'Dist::Zilla::Plugin::Manifest';
 requires 'Dist::Zilla::Plugin::MetaJSON';
 requires 'Dist::Zilla::Plugin::MetaYAML';

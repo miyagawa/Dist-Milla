@@ -37,6 +37,17 @@ ___[ .gitignore ]___
 MYMETA.*
 !META.json
 ___[ cpanfile ]___
+# requires 'Some::Module', 'VERSION';
+
 on test => sub {
     requires 'Test::More', '0.88';
 };
+___[ t/basic.t ]___
+use strict;
+use Test::More;
+use {{ (my $mod = $dist->name) =~ s/-/::/g; $mod }};
+
+# replace with the actual test
+ok 1;
+
+done_testing;

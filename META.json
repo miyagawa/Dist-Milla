@@ -14,9 +14,14 @@
    },
    "name" : "Dist-Milla",
    "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
       "configure" : {
          "requires" : {
-            "Module::Build::Tiny" : "0.013"
+            "Module::Build" : "0.3601"
          }
       },
       "develop" : {

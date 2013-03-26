@@ -13,7 +13,7 @@
 - [x] prompt on Reversion
 - [ ] better support 'perl' in cpanfile in cpanm and Carton
 - [ ] migrate command
-- [ ] document github create
+- [x] document github create
 - [ ] generate Travis?
 - [x] .gitignore
 - [x] mymeta-cpanfile

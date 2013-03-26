@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v0.1.14  2013-03-26 02:30:15 PDT
+        - Add .gitignore and .travis.yml in Minting
+
 v0.1.13  2013-03-26 02:11:32 PDT
         - Add milla command wrapper for new and install
 

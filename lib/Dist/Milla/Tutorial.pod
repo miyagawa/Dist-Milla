@@ -55,7 +55,18 @@ directory is not dirty i.e. all changes are committed.
 
   > git commit -a -m "Done initial version"
 
-Now, ake sure you have C<Changes> file ready and have a new entry
+Milla assumes you have a git remote setup so that you can push all
+your changes to. I recommend you to use either
+L<hub gem|https://rubygems.org/gems/hub> or L<App::ph> to create a new
+github repository.
+
+  # Use hub rubygem
+  > hub create
+
+  # Use App::ph
+  > ph import
+
+Now, make sure you have C<Changes> file ready and have a new entry
 under C<{{$NEXT}}>, which will be expanded to the next version of your
 module.
 

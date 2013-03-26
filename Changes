@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v0.1.17  2013-03-26 15:58:26 PDT
+        - Advertize Milla in generated_by META data
+
 v0.1.16  2013-03-26 12:33:57 PDT
         - Extract ReversionOnRelease
         - Up Perl dependency to 5.8.5

@@ -9,7 +9,7 @@ Dist::Milla::Tutorial - Milla HOW TO
 Install Milla and setup your profile.
 
   > cpanm Dist::Milla
-  > dzil setup
+  > milla setup
 
 Setup command will ask you a simple question to make a basic
 profile. If you already have set up C<dzil> before, this is common and
@@ -19,7 +19,7 @@ you can skip the process.
 
 Now it's time to make a new distribution.
 
-  > dzil new -P Milla Dist-Name
+  > milla new Dist-Name
   > cd Dist-Name
 
 At this point, you will have a really simple C<Dist-Name> directory
@@ -44,7 +44,7 @@ boilerplate you want to keep in the git repository so that your github
 repository looks great with README, as well as installable from git
 using C<cpanm> or testable with C<Travis CI>.
 
-  > dzil build
+  > milla build
   > git add Build.PL META.json README.md && git commit -m "git stuff"
 
 =head2 Making the first release
@@ -60,11 +60,19 @@ under C<{{$NEXT}}>, which will be expanded to the next version of your
 module.
 
   > $EDITOR Changes
-  > dzil test
-  > dzil release
+  > milla test
+  > milla release
 
 And your first release is done. The release is tagged on git and all
 the changes atomatically made are committed to git as well.
+
+If this is your first conversion to Milla and want to make sure you're
+not going to mess CPAN with a bad archive when something goes wrong,
+you can run the releas command with C<FAKE_RELEASE> environment
+variable. This will run all the other release process, except the
+UploadToCPAN step.
+
+  > FAKE_RELEASE=1 milla release
 
 Wait for PAUSE processing it and your module showing up on MetaCPAN in
 a few minutes. Congratulations!
@@ -83,8 +91,8 @@ to the C<Changes> file, yet.
 
 Now, make a release!
 
-  > dzil test
-  > dzil release
+  > milla test
+  > milla release
 
 The release command will automatically bump the version for you - if
 you have C<0.10>, the next version will be C<0.11> by default, but you
@@ -183,11 +191,11 @@ C<git add> the newly created files and commit it.
 
 Now you're ready to make the first build.
 
-  > dzil build
+  > milla build
 
 and if it was successful, you get a build in a directory called
 C<Dist-Name-v0.1.0> under your current directory. They can be later
-removed with C<dzil clean> command.
+removed with C<milla clean> command.
 
 Also, new C<Build.PL>, C<META.json> and C<README.md> are added in your
 working directory for git-friendliness. C<git add> them and commit it.
@@ -207,17 +215,17 @@ the I<only> change you're required to make in your code base.
 
 Now, run the release command:
 
-  > dzil release
+  > milla release
 
-to make a new release, in the same way described above for a new
-Milla setup. When this is not your first release, the version number
-gets automatically bumped by Milla, but you will be prompted if that
-is exactly the version you want, and if you want a major version up,
-you can specify to do so.
+to make a new release, in the same way described above for a new Milla
+setup. You can set C<FAKE_RELEASE> environment variable if this is
+your first conversion and want to double check what happens, before
+uploading to CPAN.
 
-=head1 UPGRADING
-
-B<TBD>: upgrade to Dist::Zilla
+When this is not your first release, the version number gets
+automatically bumped by Milla, but you will be prompted if that is
+exactly the version you want, and if you want a major version up, you
+can specify to do so.
 
 =head1 AUTHOR
 

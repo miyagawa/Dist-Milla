@@ -14,11 +14,11 @@ Dist::Milla - Distribution builder, Opinionated but Unobtrusive
 
 =head1 SYNOPSIS
 
-  > dzil new -P Milla Dist-Name
+  > milla new Dist-Name
   > cd Dist-Name
 
-  > dzil build
-  > dzil release
+  > milla build
+  > milla release
 
 =head1 DESCRIPTION
 
@@ -68,10 +68,10 @@ what you need.
 
     # First time only
     > cpanm Dist::Milla
-    > dzil setup
+    > milla setup
 
     # Make a new distribution
-    > dzil new -P Milla Dist-Name
+    > milla new Dist-Name
     > cd Dist-Name
 
     # Init your git
@@ -81,13 +81,13 @@ what you need.
     > $EDITOR lib/Dist/Name.pm t/dist-name.t cpanfile
 
     # (Optional; First time only) Make your build: This will get some boilerplate for git
-    > dzil build
+    > milla build
     > git add Build.PL META.json README.md && git commit -m "git stuff"
 
     # Done? Test and release it!
     > $EDITOR Changes
-    > dzil build
-    > dzil release
+    > milla build
+    > milla release
 
 It's that easy.
 
@@ -149,7 +149,7 @@ Let's see how we can address them by using Milla, one at a time.
 
 Moose has been improved a lot for the past few years, and your
 development machine has got a much better CPU and SSD as well,
-hopefully. For me personally, with all of Milla plugins loaded, C<dzil
+hopefully. For me personally, with all of Milla plugins loaded, C<milla
 nop> takes roughly 1.5 second, which B<I would say is acceptable>
 since I only need to run it at a distribution creation time and
 release time. More on that later.

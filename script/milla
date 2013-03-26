@@ -10,5 +10,12 @@ __END__
 
 milla - wrapper for Milla profile
 
+=head1 DESCRIPTION
+
+C<milla> is a command line wrapper for L<Dist::Milla>. It's a wrapper
+for C<dzil>, but with overriding default arguments for some commands
+such as C<new>, C<release> and C<install>. Other commands would behave
+exactly the same as C<dzil>.
+
 =cut
 

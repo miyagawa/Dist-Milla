@@ -1,6 +1,6 @@
 requires 'perl', 5.008_005;
 
-requires 'Dist::Zilla', 4.3;
+requires 'Dist::Zilla', 4.300025;
 requires 'Module::CPANfile', 0.9025;
 
 requires 'Dist::Zilla::Plugin::CheckChangesHasContent';

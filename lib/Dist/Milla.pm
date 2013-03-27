@@ -74,8 +74,8 @@ what you need.
     > milla new Dist-Name
     > cd Dist-Name
 
-    # Init your git
-    > git init && git add . && git commit -m "initial commit"
+    # git is already initialized and files are added for you
+    > git commit -m "initial commit"
 
     # Hack your code!
     > $EDITOR lib/Dist/Name.pm t/dist-name.t cpanfile

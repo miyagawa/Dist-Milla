@@ -29,8 +29,8 @@ possible.
 It is recommended to track your repository under git as soon as
 possible, even before releasing to CPAN.
 
-  # Init your git
-  > git init && git add . && git commit -m "initial commit"
+  # git is already initialized and files are added for you
+  > git commit -m "initial commit"
 
 Now start writing your code, edit the docs, tests and manage CPAN
 dependencies with L<cpanfile>.

@@ -13,8 +13,8 @@ sub after_mint {
 
     {
         my $wd = File::pushd::pushd($opts->{mint_root});
-        for my $cmd (qw( build clean )) {
-            local @ARGV = ($cmd);
+        for my $cmd (['build', '--no-tgz'], ['clean']) {
+            local @ARGV = (@$cmd);
             Dist::Milla::App->run;
         }
     }

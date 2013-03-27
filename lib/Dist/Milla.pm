@@ -202,7 +202,7 @@ B<It's just you who has to install Milla>.
 
 Dist::Zilla has a lot of plugins to search from, and it's so easy for
 you to spend a few days until you settle with the configuration you
-need. B<That is absolutely true and why Milla exsits>.
+need. B<That is exactly why Milla exsits>.
 
 If you have tried Dist::Zilla before, you might have shared the same
 experience with me, where the default Basic profile doesn't do

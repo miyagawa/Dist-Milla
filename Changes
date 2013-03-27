@@ -2,6 +2,11 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v0.1.18  2013-03-27 00:22:00 PDT
+        - Run the initial build to get build & META in git
+        - Add Dist::Zilla version to generated_by
+        - Bump Git::Init dependency
+
 v0.1.17  2013-03-26 15:58:26 PDT
         - Advertize Milla in generated_by META data
 

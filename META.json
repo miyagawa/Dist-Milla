@@ -39,6 +39,7 @@
             "Dist::Zilla::Plugin::ExecDir" : "0",
             "Dist::Zilla::Plugin::ExtraTests" : "0",
             "Dist::Zilla::Plugin::Git::GatherDir" : "0",
+            "Dist::Zilla::Plugin::Git::Init" : "2.012",
             "Dist::Zilla::Plugin::GithubMeta" : "0",
             "Dist::Zilla::Plugin::License" : "0",
             "Dist::Zilla::Plugin::LicenseFromModule" : "0",
@@ -77,6 +78,6 @@
          "web" : "https://github.com/miyagawa/Dist-Milla"
       }
    },
-   "version" : "v0.1.17"
+   "version" : "v0.1.18"
 }
 

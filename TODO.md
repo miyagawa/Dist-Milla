@@ -24,3 +24,4 @@
 - [x] remove boilerplate from dist.ini?
 - [x] DZIL_CONFIRMRELEASE_DEFAULT=1
 - [x] extract LicenseFromModule
+- [x] Run the initial build & clean in milla new

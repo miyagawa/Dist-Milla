@@ -66,28 +66,28 @@ what you need.
 
 =head1 GETTING STARTED
 
-    # First time only
-    > cpanm Dist::Milla
-    > milla setup
+  # First time only
+  > cpanm Dist::Milla
+  > milla setup
 
-    # Make a new distribution
-    > milla new Dist-Name
-    > cd Dist-Name
+  # Make a new distribution
+  > milla new Dist-Name
+  > cd Dist-Name
 
-    # git is already initialized and files are added for you
-    > git commit -m "initial commit"
+  # git is already initialized and files are added for you
+  > git commit -m "initial commit"
 
-    # Hack your code!
-    > $EDITOR lib/Dist/Name.pm t/dist-name.t cpanfile
+  # Hack your code!
+  > $EDITOR lib/Dist/Name.pm t/dist-name.t cpanfile
 
-    # (Optional; First time only) Make your build: This will get some boilerplate for git
-    > milla build
-    > git add Build.PL META.json README.md && git commit -m "git stuff"
+  # (Optional; First time only) Make your build: This will get some boilerplate for git
+  > milla build
+  > git add Build.PL META.json README.md && git commit -m "git stuff"
 
-    # Done? Test and release it!
-    > $EDITOR Changes
-    > milla build
-    > milla release
+  # Done? Test and release it!
+  > $EDITOR Changes
+  > milla build
+  > milla release
 
 It's that easy.
 

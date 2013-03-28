@@ -148,7 +148,7 @@ with Milla setup, since Milla knows which configuration tool
 (installer) to use and include them in META files upon the
 releases. You can leave that out from the C<cpanfile>.
 
-If you decide to manually construct new cpanfile, the formt is mostly
+If you decide to manually construct new cpanfile, the format is mostly
 compatible to L<Module::Install>'s requirement DSL.
 
   # Makefile.PL

@@ -25,3 +25,4 @@
 - [x] DZIL_CONFIRMRELEASE_DEFAULT=1
 - [x] extract LicenseFromModule
 - [x] Run the initial build & clean in milla new
+- [ ] extract Perl version (use 5.8.1) like perl_version_from

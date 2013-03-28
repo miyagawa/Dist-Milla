@@ -17,13 +17,13 @@ my %module_build_args = (
     "Tatsuhiko Miyagawa <miyagawa\@bulknews.net>"
   ],
   "dist_name" => "Dist-Milla",
-  "dist_version" => "v0.9.0",
+  "dist_version" => "v0.9.1",
   "license" => "perl",
   "module_name" => "Dist::Milla",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
-    "Dist::Zilla" => "4.3",
+    "Dist::Zilla" => "4.300025",
     "Dist::Zilla::Plugin::CheckChangesHasContent" => 0,
     "Dist::Zilla::Plugin::ConfirmRelease" => 0,
     "Dist::Zilla::Plugin::CopyFilesFromBuild" => 0,

@@ -56,8 +56,8 @@ what you need.
     > milla new Dist-Name
     > cd Dist-Name
 
-    # Init your git
-    > git init && git add . && git commit -m "initial commit"
+    # git is already initialized and files are added for you
+    > git commit -m "initial commit"
 
     # Hack your code!
     > $EDITOR lib/Dist/Name.pm t/dist-name.t cpanfile
@@ -173,7 +173,7 @@ Let's see how we can address them by using Milla, one at a time.
 
     Dist::Zilla has a lot of plugins to search from, and it's so easy for
     you to spend a few days until you settle with the configuration you
-    need. __That is absolutely true and why Milla exsits__.
+    need. __That is exactly why Milla exsits__.
 
     If you have tried Dist::Zilla before, you might have shared the same
     experience with me, where the default Basic profile doesn't do

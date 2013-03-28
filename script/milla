@@ -14,8 +14,27 @@ milla - wrapper for Milla profile
 
 C<milla> is a command line wrapper for L<Dist::Milla>. It's a wrapper
 for C<dzil>, but with overriding default arguments for some commands
-such as C<new>, C<release> and C<install>. Other commands would behave
-exactly the same as C<dzil>.
+such as C<new>, C<release> and C<install>.
+
+Specifically:
+
+=over 4
+
+=item *
+
+C<milla new> is equivalent to C<dzil new -P Milla>
+
+=item *
+
+C<milla install> is equivalent to C<dzil install --install-command="cpanm .">
+
+=item *
+
+C<milla release> is equivalent to C<DZIL_CONFIRMRELEASE_DEFAULT=1 dzil release>
+
+=back
+
+Other commands would behave exactly the same as C<dzil>.
 
 =cut
 

@@ -32,3 +32,7 @@ requires 'Dist::Zilla::Plugin::UploadToCPAN';
 requires 'Dist::Zilla::Plugin::VersionFromModule';
 requires 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
 requires 'Dist::Zilla::PluginBundle::Git';
+
+on test => sub {
+    requires 'Test::More', '0.86';
+};

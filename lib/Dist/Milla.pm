@@ -1,7 +1,7 @@
 package Dist::Milla;
 
 use strict;
-use version; our $VERSION = version->declare('v0.9.2');
+use version; our $VERSION = version->declare('v0.9.3');
 
 1;
 __END__

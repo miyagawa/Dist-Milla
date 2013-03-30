@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v0.9.3  2013-03-30 15:14:03 PDT
+        - Add MetaNoIndex to add sensible directories to no_index in META
+
 v0.9.2  2013-03-29 23:40:11 PDT
         - bump Dist::Zilla dep to 4.300032
 

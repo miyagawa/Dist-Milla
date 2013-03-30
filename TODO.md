@@ -11,7 +11,7 @@
 - [x] doc: migration
 - [x] Commit/Add to git upon init? https://github.com/madsen/dist-zilla-plugin-git/pull/9
 - [x] prompt on Reversion
-- [ ] better support 'perl' in cpanfile in cpanm and Carton
+- [x] better support 'perl' in cpanfile in cpanm and Carton
 - [ ] migrate command
 - [x] document github create
 - [ ] generate Travis?

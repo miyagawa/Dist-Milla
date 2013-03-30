@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v0.9.2  2013-03-29 23:40:11 PDT
+        - bump Dist::Zilla dep to 4.300032
+
 v0.9.1  2013-03-27 17:55:31 PDT
         - Bump Dist::Zilla dependency (ranguard)
         - Minor fix to documentation

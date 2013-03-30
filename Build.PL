@@ -17,13 +17,13 @@ my %module_build_args = (
     "Tatsuhiko Miyagawa <miyagawa\@bulknews.net>"
   ],
   "dist_name" => "Dist-Milla",
-  "dist_version" => "v0.9.1",
+  "dist_version" => "v0.9.2",
   "license" => "perl",
   "module_name" => "Dist::Milla",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
-    "Dist::Zilla" => "4.300025",
+    "Dist::Zilla" => "4.300032",
     "Dist::Zilla::Plugin::CheckChangesHasContent" => 0,
     "Dist::Zilla::Plugin::ConfirmRelease" => 0,
     "Dist::Zilla::Plugin::CopyFilesFromBuild" => 0,
@@ -63,9 +63,25 @@ my %module_build_args = (
     "module" => {
       "Dist::Zilla::MintingProfile::Milla" => "profiles"
     }
+  },
+  "test_requires" => {
+    "Test::More" => "0.86"
   }
 );
 
+
+unless ( eval { Module::Build->VERSION(0.4004) } ) {
+  my $tr = delete $module_build_args{test_requires};
+  my $br = $module_build_args{build_requires};
+  for my $mod ( keys %$tr ) {
+    if ( exists $br->{$mod} ) {
+      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
+    }
+    else {
+      $br->{$mod} = $tr->{$mod};
+    }
+  }
+}
 
 my $build = Module::Build->new(%module_build_args);
 

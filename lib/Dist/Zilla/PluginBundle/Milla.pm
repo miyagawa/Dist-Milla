@@ -55,6 +55,9 @@ sub configure {
         [ 'GithubMeta', { issues => 1 } ],
         [ 'ReadmeAnyFromPod', { type => 'markdown', filename => 'README.md', location => 'root' } ],
 
+        # Set no_index to sensible directories
+        [ 'MetaNoIndex', { directory => [ qw( t xt inc share eg examples ) ] } ],
+
         # cpanfile -> META.json
         [ 'Prereqs::FromCPANfile' ],
         [ $self->installer ],

@@ -35,5 +35,5 @@ requires 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
 requires 'Dist::Zilla::PluginBundle::Git';
 
 on test => sub {
-    requires 'Test::More', '0.86';
+    requires 'Test::More', '0.88';
 };

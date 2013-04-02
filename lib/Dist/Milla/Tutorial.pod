@@ -4,6 +4,10 @@ Dist::Milla::Tutorial - Milla HOW TO
 
 =head1 WORKFLOW
 
+See also L<the
+screencast|http://weblog.bulknews.net/post/46471116934/introducing-milla>
+explaining how to setup and create a new distribution with Milla.
+
 =head2 Setup
 
 Install Milla and setup your profile.

@@ -17,7 +17,7 @@ my %module_build_args = (
     "Tatsuhiko Miyagawa <miyagawa\@bulknews.net>"
   ],
   "dist_name" => "Dist-Milla",
-  "dist_version" => "v0.9.4",
+  "dist_version" => "v0.9.5",
   "license" => "perl",
   "module_name" => "Dist::Milla",
   "recommends" => {},
@@ -46,7 +46,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::Prereqs::FromCPANfile" => 0,
     "Dist::Zilla::Plugin::ReadmeAnyFromPod" => 0,
     "Dist::Zilla::Plugin::ReadmeFromPod" => 0,
-    "Dist::Zilla::Plugin::ReversionOnRelease" => 0,
+    "Dist::Zilla::Plugin::ReversionOnRelease" => "0.03",
     "Dist::Zilla::Plugin::ShareDir" => 0,
     "Dist::Zilla::Plugin::Test::Compile" => 0,
     "Dist::Zilla::Plugin::TestRelease" => 0,

@@ -71,7 +71,6 @@ sub configure {
 
         # standard stuff
         [ 'PodSyntaxTests' ],
-        [ 'Test::Compile' ],
         [ 'MetaYAML' ],
         [ 'License' ],
         [ 'ReadmeFromPod' ],

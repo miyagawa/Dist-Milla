@@ -5,6 +5,7 @@ requires 'Module::CPANfile', 0.9025;
 
 requires 'Dist::Zilla::Plugin::CheckChangesHasContent';
 requires 'Dist::Zilla::Plugin::ConfirmRelease';
+requires 'Dist::Zilla::Plugin::ContributorsFromGit';
 requires 'Dist::Zilla::Plugin::CopyFilesFromBuild';
 requires 'Dist::Zilla::Plugin::CopyFilesFromRelease';
 requires 'Dist::Zilla::Plugin::ExecDir';

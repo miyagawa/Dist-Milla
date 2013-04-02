@@ -66,6 +66,9 @@ sub configure {
         # Advertise Milla
         [ 'Milla::MetaGeneratedBy' ],
 
+        # x_contributors for MetaCPAN
+        [ 'ContributorsFromGit' ],
+
         # standard stuff
         [ 'PodSyntaxTests' ],
         [ 'Test::Compile' ],

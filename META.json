@@ -4,7 +4,7 @@
       "Tatsuhiko Miyagawa <miyagawa@bulknews.net>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Milla version v0.9.5, Dist::Zilla version 4.300032, CPAN::Meta::Converter version 2.130880",
+   "generated_by" : "Dist::Milla version v0.9.6, Dist::Zilla version 4.300032, CPAN::Meta::Converter version 2.130880",
    "license" : [
       "perl_5"
    ],
@@ -53,7 +53,7 @@
             "Dist::Zilla::Plugin::Git::Init" : "2.012",
             "Dist::Zilla::Plugin::GithubMeta" : "0",
             "Dist::Zilla::Plugin::License" : "0",
-            "Dist::Zilla::Plugin::LicenseFromModule" : "0",
+            "Dist::Zilla::Plugin::LicenseFromModule" : "0.02",
             "Dist::Zilla::Plugin::Manifest" : "0",
             "Dist::Zilla::Plugin::MetaJSON" : "0",
             "Dist::Zilla::Plugin::MetaYAML" : "0",
@@ -78,7 +78,7 @@
       },
       "test" : {
          "requires" : {
-            "Test::More" : "0.86"
+            "Test::More" : "0.88"
          }
       }
    },
@@ -94,6 +94,6 @@
          "web" : "https://github.com/miyagawa/Dist-Milla"
       }
    },
-   "version" : "v0.9.6"
+   "version" : "v0.9.7"
 }
 

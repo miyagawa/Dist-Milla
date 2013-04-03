@@ -17,7 +17,7 @@ my %module_build_args = (
     "Tatsuhiko Miyagawa <miyagawa\@bulknews.net>"
   ],
   "dist_name" => "Dist-Milla",
-  "dist_version" => "v0.9.6",
+  "dist_version" => "v0.9.7",
   "license" => "perl",
   "module_name" => "Dist::Milla",
   "recommends" => {},
@@ -35,7 +35,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::Git::Init" => "2.012",
     "Dist::Zilla::Plugin::GithubMeta" => 0,
     "Dist::Zilla::Plugin::License" => 0,
-    "Dist::Zilla::Plugin::LicenseFromModule" => 0,
+    "Dist::Zilla::Plugin::LicenseFromModule" => "0.02",
     "Dist::Zilla::Plugin::Manifest" => 0,
     "Dist::Zilla::Plugin::MetaJSON" => 0,
     "Dist::Zilla::Plugin::MetaYAML" => 0,
@@ -66,7 +66,7 @@ my %module_build_args = (
     }
   },
   "test_requires" => {
-    "Test::More" => "0.86"
+    "Test::More" => "0.88"
   }
 );
 

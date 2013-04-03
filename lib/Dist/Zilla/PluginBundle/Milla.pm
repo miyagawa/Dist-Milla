@@ -42,7 +42,7 @@ sub configure {
         # should be after GatherDir
         # Equivalent to Module::Install's version_from, license_from and author_from
         [ 'VersionFromModule' ],
-        [ 'LicenseFromModule' ],
+        [ 'LicenseFromModule', { override_author => 1 } ],
 
         [ 'ReversionOnRelease', { prompt => 1 } ],
 

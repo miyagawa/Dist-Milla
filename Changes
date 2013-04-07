@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v1.0.0  2013-04-06 21:22:44 PDT
+        - This be 1.0.0
+
 v0.9.7  2013-04-02 22:54:20 PDT
         - Bump LicenseFromModule and use override_author hack
 

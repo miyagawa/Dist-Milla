@@ -2,6 +2,10 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v1.0.1  2013-04-14 17:21:54 JST
+        - LicenseFromModule: author information is now peoprely generated out of .pm 
+        - Prereq::FromCPANfile: support 'feature' DSL encoded into META
+
 v1.0.0  2013-04-06 21:22:44 PDT
         - This be 1.0.0
 

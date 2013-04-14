@@ -14,7 +14,7 @@ requires 'Dist::Zilla::Plugin::Git::Init', '2.012'; # commit = 0
 requires 'Dist::Zilla::Plugin::Git::GatherDir';
 requires 'Dist::Zilla::Plugin::GithubMeta';
 requires 'Dist::Zilla::Plugin::License';
-requires 'Dist::Zilla::Plugin::LicenseFromModule', 0.03; # override_author = 1
+requires 'Dist::Zilla::Plugin::LicenseFromModule', '0.03'; # override_author = 1
 requires 'Dist::Zilla::Plugin::Manifest';
 requires 'Dist::Zilla::Plugin::MetaJSON';
 requires 'Dist::Zilla::Plugin::MetaYAML';
@@ -22,7 +22,7 @@ requires 'Dist::Zilla::Plugin::ModuleBuildTiny';
 requires 'Dist::Zilla::Plugin::NameFromDirectory';
 requires 'Dist::Zilla::Plugin::NextRelease';
 requires 'Dist::Zilla::Plugin::PodSyntaxTests';
-requires 'Dist::Zilla::Plugin::Prereqs::FromCPANfile';
+requires 'Dist::Zilla::Plugin::Prereqs::FromCPANfile', '0.06';
 requires 'Dist::Zilla::Plugin::ReadmeAnyFromPod';
 requires 'Dist::Zilla::Plugin::ReadmeFromPod';
 requires 'Dist::Zilla::Plugin::ReversionOnRelease', '0.04';

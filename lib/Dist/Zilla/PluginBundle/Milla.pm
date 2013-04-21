@@ -78,6 +78,7 @@ sub configure {
         [ 'ExecDir', { dir => 'script' } ],
         [ 'ShareDir' ],
         [ 'Manifest' ],
+        [ 'ManifestSkip' ],
 
         [ 'CheckChangesHasContent' ],
         [ 'TestRelease' ],

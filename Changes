@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v1.0.2  2013-04-21 08:47:50 CST
+        - Added ManifestSkip by default
+
 v1.0.1  2013-04-14 17:21:54 JST
         - LicenseFromModule: author information is now peoprely generated out of .pm 
         - Prereq::FromCPANfile: support 'feature' DSL encoded into META

@@ -36,6 +36,7 @@ ___[ .gitignore ]___
 /Build
 MYMETA.*
 !META.json
+/.prove
 ___[ cpanfile ]___
 requires 'perl', '5.008005';
 

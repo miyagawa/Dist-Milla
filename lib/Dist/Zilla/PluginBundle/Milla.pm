@@ -92,7 +92,7 @@ sub configure {
             allow_dirty_match => '\.pm$', # .pm files copied back from Release
         } ],
         [ 'Git::Tag', { tag_format => '%v', tag_message => '' } ],
-        [ 'Git::Push' ],
+        [ 'Git::Push', { remotes_must_exist => 0 } ],
 
     );
 }

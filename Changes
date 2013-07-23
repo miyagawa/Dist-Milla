@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v1.0.3  2013-07-23 13:57:21 PDT
+        - Allow MakeMaker::IncShareDir
+
 v1.0.2  2013-04-21 08:47:50 CST
         - Added ManifestSkip by default
 

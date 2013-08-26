@@ -94,7 +94,7 @@
          "web" : "https://github.com/miyagawa/Dist-Milla"
       }
    },
-   "version" : "v1.0.3",
+   "version" : "v1.0.4",
    "x_contributors" : [
       "Curtis Brandt <curtis@cpan.org>",
       "Shawn M Moore <code@sartak.org>",

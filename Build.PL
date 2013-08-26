@@ -17,7 +17,7 @@ my %module_build_args = (
     "Tatsuhiko Miyagawa <miyagawa\@bulknews.net>"
   ],
   "dist_name" => "Dist-Milla",
-  "dist_version" => "v1.0.3",
+  "dist_version" => "v1.0.4",
   "license" => "perl",
   "module_name" => "Dist::Milla",
   "recommends" => {},

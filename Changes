@@ -1,7 +1,9 @@
 Revision history for Dist::Milla
 
 {{$NEXT}}
-        - Include generated LICENSE file in repo
+
+v1.0.4  2013-08-25 20:23:42 PDT
+        - Include generated LICENSE in the repository
 
 v1.0.3  2013-07-23 13:57:21 PDT
         - Allow MakeMaker::IncShareDir

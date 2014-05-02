@@ -103,7 +103,7 @@ A lot of you might have heard of Dist::Zilla. If you already use it
 and love it, then you can stop reading this, or even using this module
 at all.
 
-If you heard of dzil and think it's overkill or doesn't work for yor
+If you heard of dzil and think it's overkill or doesn't work for your
 module, this is why Milla exists.
 
 If you have tried dzil ages ago and thought it was slow, or couldn't
@@ -121,7 +121,7 @@ explaining more details about what this means.
 
 That said, I myself have avoided switching to Dist::Zilla for a long
 time for some reason. I actually tried a couple of times, but ended up
-giving up to swithing it. You can google for "Hate Dist::Zilla" and
+giving up switching to it. You can google for "Hate Dist::Zilla" and
 will be able to find similarly frustrated developers.
 
 In my observation, typical problems/dislikes around Dist::Zilla can be
@@ -202,12 +202,12 @@ B<It's just you who has to install Milla>.
 
 Dist::Zilla has a lot of plugins to search from, and it's so easy for
 you to spend a few days until you settle with the configuration you
-need. B<That is exactly why Milla exsits>.
+need. B<That is exactly why Milla exists>.
 
 If you have tried Dist::Zilla before, you might have shared the same
 experience with me, where the default Basic profile doesn't do
 much. And when you started wondering what other authors are doing, you
-would be overwhelmed by the amount of plugins and complexicy
+would be overwhelmed by the amount of plugins and complexity
 introduced by the clever workflow.
 
 Milla provides a sensible set of defaults that will work for 90% of
@@ -257,7 +257,7 @@ different name other than my own personal name bundle.
 I agree that it is still overkill. But as of this writing, there's no
 software other than Dist::Zilla that can correctly create a CPAN style
 distribution other than L<ExtUtils::MakeMaker> and L<Module::Build>,
-and I think they're wrong tool for I<authoring> distributions.
+and I think they're wrong tools for I<authoring> distributions.
 
 Check out L<Minilla> if you think Dist::Zilla is overkill and want a
 lightweight replacement that does the same thing.
@@ -287,7 +287,7 @@ cargo culted a lot of configuration from, for Milla bundle.
 
 Tokuhiro Matsuno has beaten me to writing L<Minilla>, which resulted
 in me going the Dist::Zilla plugin route. L<Minilla> is a sister
-project, and we try to make them compatible to each other and makes it
+project, and we try to make them compatible to each other and make it
 as trivial as possible to switch from/to each other.
 
 =head1 COPYRIGHT

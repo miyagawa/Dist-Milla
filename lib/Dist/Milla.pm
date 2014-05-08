@@ -230,7 +230,7 @@ inc/Module/Install.pm>.
 
 =head3 So you basically wrote a simple PluginBundle and some wrapper, and give that a name?
 
-Yes. That's the whole point. Think L<Dist::Zila> as a framework
+Yes. That's the whole point. Think L<Dist::Zilla> as a framework
 (because it is!) and Milla is a (thin) application built on top of
 that.
 

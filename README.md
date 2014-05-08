@@ -12,17 +12,17 @@ Dist::Milla - Distribution builder, Opinionated but Unobtrusive
 
 # DESCRIPTION
 
-__Milla is a Dist::Zilla profile__. It is a collection of
-[Dist::Zilla](http://search.cpan.org/perldoc?Dist::Zilla) plugin bundle, minting profile and a command line
+**Milla is a Dist::Zilla profile**. It is a collection of
+[Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) plugin bundle, minting profile and a command line
 wrapper. It is designed around the "Convention over Configuration"
 philosophy (Opinionated), and by default doesn't rewrite module files
 nor requires you to change your workflow at all (Unobtrusive).
 
 Experienced CPAN authors who know how to write CPAN distributions can
 keep writing the code like before, but can remove lots of cruft, then
-replace [Module::Install](http://search.cpan.org/perldoc?Module::Install) and [ShipIt](http://search.cpan.org/perldoc?ShipIt) with [Dist::Zilla](http://search.cpan.org/perldoc?Dist::Zilla) and Milla
+replace [Module::Install](https://metacpan.org/pod/Module::Install) and [ShipIt](https://metacpan.org/pod/ShipIt) with [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) and Milla
 profile for authoring, while you don't need to _add_ anything other
-than a shiny new [cpanfile](http://search.cpan.org/perldoc?cpanfile) (optional), and a simple `dist.ini`
+than a shiny new [cpanfile](https://metacpan.org/pod/cpanfile) (optional), and a simple `dist.ini`
 saying:
 
     [@Milla]
@@ -33,17 +33,18 @@ and that's it.
 
 As stated above, Milla is opinionated. Milla has a bold assumption and
 convention like the followings, which are almost compatible to the
-sister project [Minilla](http://search.cpan.org/perldoc?Minilla).
+sister project [Minilla](https://metacpan.org/pod/Minilla).
 
 - Your module is Pure Perl, and files are stored in `lib`
 - Your executable file is in `script` directory, if any
+- Your dist sharedirs must be in `share` directory, if any
 - Your module is maintained with Git and `git ls-files` matches with what you will release
 - Your module has a static list of prerequisites that can be described in `cpanfile`
 - Your module has a Changes file
 
 If you have a module that doesn't work with these conventions, no
 worries. Because Milla is just a Dist::Zilla profile, you can just
-upgrade to [Dist::Zilla](http://search.cpan.org/perldoc?Dist::Zilla) and enable/disable plugins that match with
+upgrade to [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) and enable/disable plugins that match with
 what you need.
 
 # GETTING STARTED
@@ -73,9 +74,9 @@ what you need.
 
 It's that easy.
 
-You already have distributions with [Module::Install](http://search.cpan.org/perldoc?Module::Install),
-[Module::Build](http://search.cpan.org/perldoc?Module::Build) or [ShipIt](http://search.cpan.org/perldoc?ShipIt)? Migrating is also trivial. See
-["MIGRATING" in Dist::Milla::Tutorial](http://search.cpan.org/perldoc?Dist::Milla::Tutorial#MIGRATING) for more details.
+You already have distributions with [Module::Install](https://metacpan.org/pod/Module::Install),
+[Module::Build](https://metacpan.org/pod/Module::Build) or [ShipIt](https://metacpan.org/pod/ShipIt)? Migrating is also trivial. See
+["MIGRATING" in Dist::Milla::Tutorial](https://metacpan.org/pod/Dist::Milla::Tutorial#MIGRATING) for more details.
 
 # WHY
 
@@ -85,7 +86,7 @@ A lot of you might have heard of Dist::Zilla. If you already use it
 and love it, then you can stop reading this, or even using this module
 at all.
 
-If you heard of dzil and think it's overkill or doesn't work for yor
+If you heard of dzil and think it's overkill or doesn't work for your
 module, this is why Milla exists.
 
 If you have tried dzil ages ago and thought it was slow, or couldn't
@@ -97,12 +98,13 @@ First, let me tell you what's the reason to like Dist::Zilla.
 Dist::Zilla doesn't do the job of installing of your module. So you
 can focus on the authoring side of things with dzil, while letting
 MakeMaker or Module::Build(::Tiny) to do the installation side of things. I
-like this design. David Golden also has [an excellent blog post](http://www.dagolden.com/index.php/752/why-im-using-distzilla/)
+like this design. David Golden also has [an excellent blog
+post](http://www.dagolden.com/index.php/752/why-im-using-distzilla/)
 explaining more details about what this means.
 
 That said, I myself have avoided switching to Dist::Zilla for a long
 time for some reason. I actually tried a couple of times, but ended up
-giving up to swithing it. You can google for "Hate Dist::Zilla" and
+giving up switching to it. You can google for "Hate Dist::Zilla" and
 will be able to find similarly frustrated developers.
 
 In my observation, typical problems/dislikes around Dist::Zilla can be
@@ -121,16 +123,16 @@ Let's see how we can address them by using Milla, one at a time.
     Moose has been improved a lot for the past few years, and your
     development machine has got a much better CPU and SSD as well,
     hopefully. For me personally, with all of Milla plugins loaded, `milla
-    nop` takes roughly 1.5 second, which __I would say is acceptable__
+    nop` takes roughly 1.5 second, which **I would say is acceptable**
     since I only need to run it at a distribution creation time and
     release time. More on that later.
 
 - Dist::Zilla has too many dependencies
 
-    __That is absolutely true__, and Milla doesn't solve that problem.
+    **That is absolutely true**, and Milla doesn't solve that problem.
 
     For a quickstart with Milla-like distribution building environment
-    without installing "half of CPAN", see the sister project [Minilla](http://search.cpan.org/perldoc?Minilla).
+    without installing "half of CPAN", see the sister project [Minilla](https://metacpan.org/pod/Minilla).
 
 - Dist::Zilla is obtrusive
 
@@ -147,9 +149,9 @@ Let's see how we can address them by using Milla, one at a time.
 
     I want to edit and maintain all the code and docs myself, and let the
     authoring tool figure out metadata _from_ there, just like
-    [Module::Install](http://search.cpan.org/perldoc?Module::Install)'s `all_from` did. Not the other way round.
+    [Module::Install](https://metacpan.org/pod/Module::Install)'s `all_from` did. Not the other way round.
 
-    __With Milla, you don't need to change your workflow__, and it won't
+    **With Milla, you don't need to change your workflow**, and it won't
     rewrite your precious `.pm` files at all. Like `all_from`, most of
     the metadata is figured out from your module and git, automatically.
 
@@ -163,22 +165,22 @@ Let's see how we can address them by using Milla, one at a time.
     `$VERSION` automatically).
 
     This means the git repository can be installed as a standard CPAN
-    distribution even without [Dist::Zilla](http://search.cpan.org/perldoc?Dist::Zilla) installed, and collaborators
+    distribution even without [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) installed, and collaborators
     can just hack your modules, run the tests with `prove -l t` and send
     a pull request just like a normal module without using dzil at all.
 
-    __It's just you who has to install Milla__.
+    **It's just you who has to install Milla**.
 
 - Dist::Zilla isn't just worth it
 
     Dist::Zilla has a lot of plugins to search from, and it's so easy for
     you to spend a few days until you settle with the configuration you
-    need. __That is exactly why Milla exsits__.
+    need. **That is exactly why Milla exists**.
 
     If you have tried Dist::Zilla before, you might have shared the same
     experience with me, where the default Basic profile doesn't do
     much. And when you started wondering what other authors are doing, you
-    would be overwhelmed by the amount of plugins and complexicy
+    would be overwhelmed by the amount of plugins and complexity
     introduced by the clever workflow.
 
     Milla provides a sensible set of defaults that will work for 90% of
@@ -199,7 +201,7 @@ inc/Module/Install.pm`.
 
 ### So you basically wrote a simple PluginBundle and some wrapper, and give that a name?
 
-Yes. That's the whole point. Think [Dist::Zila](http://search.cpan.org/perldoc?Dist::Zila) as a framework
+Yes. That's the whole point. Think [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) as a framework
 (because it is!) and Milla is a (thin) application built on top of
 that.
 
@@ -212,10 +214,10 @@ switched to Dist::Zilla and recommend everyone to use, I have to say,
 
 Wouldn't that be more egoistic than giving it a different name?
 
-I wrote my own [PSGI](http://search.cpan.org/perldoc?PSGI) implementation, and didn't give it a name
-PSGI::MIYAGAWA - it's called [Plack](http://search.cpan.org/perldoc?Plack). I wrote a kick-ass, lightweight
+I wrote my own [PSGI](https://metacpan.org/pod/PSGI) implementation, and didn't give it a name
+PSGI::MIYAGAWA - it's called [Plack](https://metacpan.org/pod/Plack). I wrote a kick-ass, lightweight
 CPAN installer, and didn't give it a name CPAN::Installer::MIYAGAWA -
-it's called [cpanm](http://search.cpan.org/perldoc?cpanm).
+it's called [cpanm](https://metacpan.org/pod/cpanm).
 
 Because I _think_ this can be recommended for many people, and want
 to make it better by incorporating contributions, I gave it a
@@ -225,10 +227,10 @@ different name other than my own personal name bundle.
 
 I agree that it is still overkill. But as of this writing, there's no
 software other than Dist::Zilla that can correctly create a CPAN style
-distribution other than [ExtUtils::MakeMaker](http://search.cpan.org/perldoc?ExtUtils::MakeMaker) and [Module::Build](http://search.cpan.org/perldoc?Module::Build),
-and I think they're wrong tool for _authoring_ distributions.
+distribution other than [ExtUtils::MakeMaker](https://metacpan.org/pod/ExtUtils::MakeMaker) and [Module::Build](https://metacpan.org/pod/Module::Build),
+and I think they're wrong tools for _authoring_ distributions.
 
-Check out [Minilla](http://search.cpan.org/perldoc?Minilla) if you think Dist::Zilla is overkill and want a
+Check out [Minilla](https://metacpan.org/pod/Minilla) if you think Dist::Zilla is overkill and want a
 lightweight replacement that does the same thing.
 
 ### Milla?
@@ -249,14 +251,14 @@ Tatsuhiko Miyagawa <miyagawa@bulknews.net>
 
 # CONTRIBUTORS
 
-Ricardo SIGNES wrote [Dist::Zilla](http://search.cpan.org/perldoc?Dist::Zilla).
+Ricardo SIGNES wrote [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla).
 
-David Golden wrote [Dist::Zilla::PluginBundle::DAGOLDEN](http://search.cpan.org/perldoc?Dist::Zilla::PluginBundle::DAGOLDEN), which I
+David Golden wrote [Dist::Zilla::PluginBundle::DAGOLDEN](https://metacpan.org/pod/Dist::Zilla::PluginBundle::DAGOLDEN), which I
 cargo culted a lot of configuration from, for Milla bundle.
 
-Tokuhiro Matsuno has beaten me to writing [Minilla](http://search.cpan.org/perldoc?Minilla), which resulted
-in me going the Dist::Zilla plugin route. [Minilla](http://search.cpan.org/perldoc?Minilla) is a sister
-project, and we try to make them compatible to each other and makes it
+Tokuhiro Matsuno has beaten me to writing [Minilla](https://metacpan.org/pod/Minilla), which resulted
+in me going the Dist::Zilla plugin route. [Minilla](https://metacpan.org/pod/Minilla) is a sister
+project, and we try to make them compatible to each other and make it
 as trivial as possible to switch from/to each other.
 
 # COPYRIGHT
@@ -270,4 +272,4 @@ it under the same terms as Perl itself.
 
 # SEE ALSO
 
-[Dist::Zilla](http://search.cpan.org/perldoc?Dist::Zilla), [Minilla](http://search.cpan.org/perldoc?Minilla)
+[Dist::Zilla](https://metacpan.org/pod/Dist::Zilla), [Minilla](https://metacpan.org/pod/Minilla)

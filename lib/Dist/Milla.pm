@@ -51,6 +51,8 @@ sister project L<Minilla>.
 
 =item Your executable file is in C<script> directory, if any
 
+=item Your dist sharedirs must be in C<share> directory, if any
+
 =item Your module is maintained with Git and C<git ls-files> matches with what you will release
 
 =item Your module has a static list of prerequisites that can be described in C<cpanfile>

@@ -14,7 +14,7 @@ requires 'Dist::Zilla::Plugin::Git::Init', '2.012'; # commit = 0
 requires 'Dist::Zilla::Plugin::Git::GatherDir';
 requires 'Dist::Zilla::Plugin::GithubMeta';
 requires 'Dist::Zilla::Plugin::License';
-requires 'Dist::Zilla::Plugin::LicenseFromModule', '0.03'; # override_author = 1
+requires 'Dist::Zilla::Plugin::LicenseFromModule', '0.05'; # load from .pod too
 requires 'Dist::Zilla::Plugin::Manifest';
 requires 'Dist::Zilla::Plugin::MetaJSON';
 requires 'Dist::Zilla::Plugin::MetaYAML';

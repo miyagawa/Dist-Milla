@@ -32,6 +32,7 @@ requires 'Dist::Zilla::Plugin::TestRelease';
 requires 'Dist::Zilla::Plugin::UploadToCPAN';
 requires 'Dist::Zilla::Plugin::VersionFromModule';
 requires 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
+requires 'Dist::Zilla::Role::PluginBundle::PluginRemover';
 requires 'Dist::Zilla::PluginBundle::Git';
 
 on test => sub {

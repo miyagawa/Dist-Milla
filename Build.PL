@@ -55,6 +55,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::VersionFromModule" => 0,
     "Dist::Zilla::PluginBundle::Git" => 0,
     "Dist::Zilla::Role::PluginBundle::Config::Slicer" => 0,
+    "Dist::Zilla::Role::PluginBundle::PluginRemover" => 0,
     "Module::CPANfile" => "0.9025",
     "perl" => "5.008005"
   },

@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v1.0.7  2014-09-10 14:31:56 PDT
+        - add Dist::Milla to the META as a develop dependency. #8
+
 v1.0.6  2014-09-10 14:11:08 PDT
         - bump LicenseFromModule
 

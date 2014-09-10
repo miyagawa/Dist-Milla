@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v1.0.6  2014-09-10 14:11:08 PDT
+        - bump LicenseFromModule
+
 v1.0.5  2014-05-08 08:35:25 PDT
         - Documentation fixes
         - Bump Test::More dependency

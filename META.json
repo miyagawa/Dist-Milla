@@ -4,7 +4,7 @@
       "Tatsuhiko Miyagawa <miyagawa@bulknews.net>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Milla version v1.0.4, Dist::Zilla version 5.016, CPAN::Meta::Converter version 2.141170",
+   "generated_by" : "Dist::Milla version v1.0.5, Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142060",
    "license" : [
       "perl_5"
    ],
@@ -53,7 +53,7 @@
             "Dist::Zilla::Plugin::Git::Init" : "2.012",
             "Dist::Zilla::Plugin::GithubMeta" : "0",
             "Dist::Zilla::Plugin::License" : "0",
-            "Dist::Zilla::Plugin::LicenseFromModule" : "0.03",
+            "Dist::Zilla::Plugin::LicenseFromModule" : "0.05",
             "Dist::Zilla::Plugin::Manifest" : "0",
             "Dist::Zilla::Plugin::MetaJSON" : "0",
             "Dist::Zilla::Plugin::MetaYAML" : "0",
@@ -94,12 +94,14 @@
          "web" : "https://github.com/miyagawa/Dist-Milla"
       }
    },
-   "version" : "v1.0.5",
+   "version" : "v1.0.6",
    "x_contributors" : [
       "Curtis Brandt <curtis@cpan.org>",
       "Helmut Wollmersdorfer <helmut@wollmersdorfer.at>",
+      "Mike Greb <mikegrb@cpan.org>",
+      "Olivier Mengué <dolmen@cpan.org>",
       "Shawn M Moore <code@sartak.org>",
-      "mikegrb <mgreb@linode.com>"
+      "Tatsuhiko Miyagawa <miyagawa@gmail.com>"
    ]
 }
 

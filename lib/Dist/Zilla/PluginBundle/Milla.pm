@@ -1,4 +1,5 @@
 package Dist::Zilla::PluginBundle::Milla;
+use Dist::Milla;
 use Moose;
 with 'Dist::Zilla::Role::PluginBundle::Easy',
      'Dist::Zilla::Role::PluginBundle::Config::Slicer';
@@ -68,6 +69,9 @@ sub configure {
 
         # x_contributors for MetaCPAN
         [ 'ContributorsFromGit' ],
+
+        # add Milla itself as a develop dependency
+        [ 'Prereqs', { -phase => 'develop', 'Dist::Milla' => Dist::Milla->VERSION } ],
 
         # standard stuff
         [ 'PodSyntaxTests' ],

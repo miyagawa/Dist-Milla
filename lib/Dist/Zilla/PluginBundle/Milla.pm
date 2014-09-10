@@ -2,6 +2,7 @@ package Dist::Zilla::PluginBundle::Milla;
 use Dist::Milla;
 use Moose;
 with 'Dist::Zilla::Role::PluginBundle::Easy',
+     'Dist::Zilla::Role::PluginBundle::PluginRemover',
      'Dist::Zilla::Role::PluginBundle::Config::Slicer';
 
 use namespace::autoclean;

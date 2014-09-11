@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v1.0.8  2014-09-10 17:18:28 PDT
+        - Add PluginRemover role so you can easily remove plugin from Milla bundle. #27
+
 v1.0.7  2014-09-10 14:31:56 PDT
         - add Dist::Milla to the META as a develop dependency. #8
 

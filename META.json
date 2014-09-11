@@ -36,7 +36,6 @@
       },
       "develop" : {
          "requires" : {
-            "Dist::Milla" : "v1.0.6",
             "Test::Pod" : "1.41"
          }
       },
@@ -96,7 +95,7 @@
          "web" : "https://github.com/miyagawa/Dist-Milla"
       }
    },
-   "version" : "v1.0.7",
+   "version" : "v1.0.8",
    "x_contributors" : [
       "Curtis Brandt <curtis@cpan.org>",
       "Helmut Wollmersdorfer <helmut@wollmersdorfer.at>",

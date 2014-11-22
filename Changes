@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v1.0.9  2014-11-22 09:55:34 PST
+        - bump minimum perl requirement
+
 v1.0.8  2014-09-10 17:18:28 PDT
         - Add PluginRemover role so you can easily remove plugin from Milla bundle. #27
 

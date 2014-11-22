@@ -1,4 +1,4 @@
-requires 'perl', 5.008_005;
+requires 'perl', 5.012;
 
 requires 'Dist::Zilla', 4.300032;
 requires 'Module::CPANfile', 0.9025;

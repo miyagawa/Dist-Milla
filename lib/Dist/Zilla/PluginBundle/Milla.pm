@@ -78,7 +78,7 @@ sub configure {
         [ 'PodSyntaxTests' ],
         [ 'MetaYAML' ],
         [ 'License' ],
-        [ 'ReadmeFromPod' ],
+        [ 'ReadmeFromPod', { readme => 'README' } ],
         [ 'ExtraTests' ],
         [ 'ExecDir', { dir => 'script' } ],
         [ 'ShareDir' ],

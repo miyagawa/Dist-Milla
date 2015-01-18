@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v1.0.11  2015-01-18 11:15:10 PST
+        - Minor documentation updates
+
 v1.0.10  2015-01-12 12:52:44 PST
         - Work around ReadmeFromPod update (#28)
 

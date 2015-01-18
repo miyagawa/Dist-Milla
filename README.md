@@ -27,11 +27,9 @@ saying:
 
     [@Milla]
 
-and that's it.
-
 # CONVENTIONS
 
-As stated above, Milla is opinionated. Milla has a bold assumption and
+Milla is opinionated. Milla has a slightly bold assumption and
 convention like the followings, which are almost compatible to the
 sister project [Minilla](https://metacpan.org/pod/Minilla).
 
@@ -80,11 +78,11 @@ You already have distributions with [Module::Install](https://metacpan.org/pod/M
 
 # WHY
 
-# WHY Dist::Zilla
+## WHY Dist::Zilla
 
-A lot of you might have heard of Dist::Zilla. If you already use it
-and love it, then you can stop reading this, or even using this module
-at all.
+A lot of you might have heard of Dist::Zilla (dzil). If you already
+use it and love it, then you can stop reading this, or even using this
+module at all.
 
 If you heard of dzil and think it's overkill or doesn't work for your
 module, this is why Milla exists.
@@ -98,14 +96,14 @@ First, let me tell you what's the reason to like Dist::Zilla.
 Dist::Zilla doesn't do the job of installing of your module. So you
 can focus on the authoring side of things with dzil, while letting
 MakeMaker or Module::Build(::Tiny) to do the installation side of things. I
-like this design. David Golden also has [an excellent blog
+like this design. David Golden also has written [an excellent blog
 post](http://www.dagolden.com/index.php/752/why-im-using-distzilla/)
 explaining more details about what this means.
 
 That said, I myself have avoided switching to Dist::Zilla for a long
-time for some reason. I actually tried a couple of times, but ended up
-giving up switching to it. You can google for "Hate Dist::Zilla" and
-will be able to find similarly frustrated developers.
+time. I actually tried a couple of times, but ended up giving up
+switching to it. You can google for "Hate Dist::Zilla" and will be
+able to find rants by similarly frustrated developers.
 
 In my observation, typical problems/dislikes around Dist::Zilla can be
 categorized into one of the following thoughts.
@@ -113,58 +111,62 @@ categorized into one of the following thoughts.
 - Dist::Zilla is slow
 - Dist::Zilla has too many dependencies
 - Dist::Zilla is obtrusive
-- Dist::Zilla makes contributing hard
+- Dist::Zilla makes contributing difficult
 - Dist::Zilla isn't just worth it
 
 Let's see how we can address them by using Milla, one at a time.
 
 - Dist::Zilla is slow
 
-    Moose has been improved a lot for the past few years, and your
-    development machine has got a much better CPU and SSD as well,
-    hopefully. For me personally, with all of Milla plugins loaded, `milla
-    nop` takes roughly 1.5 second, which **I would say is acceptable**
-    since I only need to run it at a distribution creation time and
-    release time. More on that later.
+    Moose, the object system Dist::Zilla uses under the hood, has been
+    improved a lot for the past few years, and your development machine
+    has got a much better CPU and SSD as well. For me personally, with all
+    of Milla plugins loaded, `milla nop` takes roughly 1.5 second, which
+    **I would say is acceptable** since I only need to run it at a
+    distribution creation time and release time. More on that later.
 
 - Dist::Zilla has too many dependencies
 
-    **That is absolutely true**, and Milla doesn't solve that problem.
+    This is true, and Milla doesn't solve that problem. Since it _adds_
+    more dependencies on top of Dist::Zilla.
 
     For a quickstart with Milla-like distribution building environment
     without installing "half of CPAN", see the sister project [Minilla](https://metacpan.org/pod/Minilla).
 
 - Dist::Zilla is obtrusive
 
-    That was my main motivation for not switching to Dist::Zilla. The
-    truth is, Dist::Zilla doesn't _require_ you to change workflow by
-    default. But a lot of popular plugins and workflow suggests doing so,
-    by using stuff like PodWeaver, which requires you to switch to
-    Dist::Zilla for everything and then generate the boilerplate, or munge
-    your modules from there.
+    This was my main motivation for not switching to Dist::Zilla - the
+    thought that using Dist::Zilla would require me to change my workflow.
+
+    The truth is, Dist::Zilla doesn't _require_ you to change your
+    workflow by itself. But a lot of popular plugins and workflow suggests
+    doing so, by using stuff like PodWeaver, which requires you to switch
+    to Dist::Zilla for everything and then generate the boilerplate, or
+    munge your modules from there.
 
     I don't care about the real boilerplate such as `MANIFEST`,
-    `META.yml` or `LICENSE` auto-generated, but didn't personally like
+    `META.json` or `LICENSE` auto-generated, but don't personally like
     the idea of generating documentation or munging code.
 
     I want to edit and maintain all the code and docs myself, and let the
-    authoring tool figure out metadata _from_ there, just like
-    [Module::Install](https://metacpan.org/pod/Module::Install)'s `all_from` did. Not the other way round.
+    authoring tool figure out metadata _from_ there, not the other way
+    round.
 
     **With Milla, you don't need to change your workflow**, and it won't
-    rewrite your precious `.pm` files at all. Like `all_from`, most of
-    the metadata is figured out from your module and git, automatically.
+    rewrite your precious `.pm` files at all. Like Module::Insall;s
+    `all_from`, most of the metadata is figured out from your module and
+    git, automatically.
 
-- Dist::Zilla makes contributing hard
+- Dist::Zilla makes contributing difficult
 
-    That is true for most Dist::Zilla based distributions.
+    This is true for most Dist::Zilla based distributions.
 
     Milla copies the plain `META.json` and `Build.PL` into the git
     repository you automatically bump on every release. And there won't be
     any code munging process required for the release (except bumping
     `$VERSION` automatically).
 
-    This means the git repository can be installed as a standard CPAN
+    This means that the git repository can be installed as a standard CPAN
     distribution even without [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) installed, and collaborators
     can just hack your modules, run the tests with `prove -l t` and send
     a pull request just like a normal module without using dzil at all.
@@ -195,7 +197,8 @@ its bundling itself into `inc`. But I know many collaborators hated
 it because you have no idea what plugins have to be installed when you
 use some funky plugins, and your users are puzzled when they try to
 install from the git repository because it says `Can't locate
-inc/Module/Install.pm`.
+inc/Module/Install.pm`. This problem can be fixed, but I was not
+interested in doing so.
 
 # FAQ
 
@@ -231,7 +234,7 @@ distribution other than [ExtUtils::MakeMaker](https://metacpan.org/pod/ExtUtils:
 and I think they're wrong tools for _authoring_ distributions.
 
 Check out [Minilla](https://metacpan.org/pod/Minilla) if you think Dist::Zilla is overkill and want a
-lightweight replacement that does the same thing.
+lightweight replacement that achieves the same goal byt does less.
 
 ### Milla?
 

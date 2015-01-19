@@ -5,11 +5,11 @@ requires 'Module::CPANfile', 0.9025;
 
 requires 'Dist::Zilla::Plugin::CheckChangesHasContent';
 requires 'Dist::Zilla::Plugin::ConfirmRelease';
-requires 'Dist::Zilla::Plugin::ContributorsFromGit';
 requires 'Dist::Zilla::Plugin::CopyFilesFromBuild';
 requires 'Dist::Zilla::Plugin::CopyFilesFromRelease';
 requires 'Dist::Zilla::Plugin::ExecDir';
 requires 'Dist::Zilla::Plugin::ExtraTests';
+requires 'Dist::Zilla::Plugin::Git::Contributors', '0.009';
 requires 'Dist::Zilla::Plugin::Git::Init', '2.012'; # commit = 0
 requires 'Dist::Zilla::Plugin::Git::GatherDir';
 requires 'Dist::Zilla::Plugin::GithubMeta';

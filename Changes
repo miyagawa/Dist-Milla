@@ -1,6 +1,7 @@
 Revision history for Dist::Milla
 
 {{$NEXT}}
+        - re-add [Git::Contributors] (builds clean now)
 
 v1.0.13  2015-01-18 22:11:26 PST
         - revert Git::Contributors because it doesn't build clean on `milla new`

@@ -69,7 +69,7 @@ sub configure {
         [ 'Milla::MetaGeneratedBy' ],
 
         # x_contributors for MetaCPAN
-        [ 'Git::Contributors' ],
+        [ 'ContributorsFromGit' ],
 
         # add Milla itself as a develop dependency
         [ 'Prereqs', { -phase => 'develop', 'Dist::Milla' => Dist::Milla->VERSION } ],

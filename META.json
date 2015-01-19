@@ -4,7 +4,7 @@
       "Tatsuhiko Miyagawa <miyagawa@bulknews.net>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.031, Dist::Milla version v1.0.11, CPAN::Meta::Converter version 2.143240",
+   "generated_by" : "Dist::Zilla version 5.031, Dist::Milla version v1.0.12, CPAN::Meta::Converter version 2.143240",
    "license" : [
       "perl_5"
    ],
@@ -36,7 +36,7 @@
       },
       "develop" : {
          "requires" : {
-            "Dist::Milla" : "v1.0.11",
+            "Dist::Milla" : "v1.0.12",
             "Test::Pod" : "1.41"
          }
       },
@@ -45,11 +45,11 @@
             "Dist::Zilla" : "4.300032",
             "Dist::Zilla::Plugin::CheckChangesHasContent" : "0",
             "Dist::Zilla::Plugin::ConfirmRelease" : "0",
+            "Dist::Zilla::Plugin::ContributorsFromGit" : "0",
             "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0",
             "Dist::Zilla::Plugin::CopyFilesFromRelease" : "0",
             "Dist::Zilla::Plugin::ExecDir" : "0",
             "Dist::Zilla::Plugin::ExtraTests" : "0",
-            "Dist::Zilla::Plugin::Git::Contributors" : "0",
             "Dist::Zilla::Plugin::Git::GatherDir" : "0",
             "Dist::Zilla::Plugin::Git::Init" : "2.012",
             "Dist::Zilla::Plugin::GithubMeta" : "0",
@@ -96,7 +96,7 @@
          "web" : "https://github.com/miyagawa/Dist-Milla"
       }
    },
-   "version" : "v1.0.12",
+   "version" : "v1.0.13",
    "x_contributors" : [
       "Curtis Brandt <curtis@cpan.org>",
       "Helmut Wollmersdorfer <helmut@wollmersdorfer.at>",

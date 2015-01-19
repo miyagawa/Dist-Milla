@@ -2,6 +2,10 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v1.0.13  2015-01-18 22:11:26 PST
+        - revert Git::Contributors because it doesn't build clean on `milla new`
+        - add $VERSION to Dist::Milla::App so `milla version` would work correctly
+
 v1.0.12  2015-01-18 17:38:22 PST
         - switched from ContributorsFromGit to Git::Contributors
 

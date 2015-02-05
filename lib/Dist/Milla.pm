@@ -182,7 +182,7 @@ authoring tool figure out metadata I<from> there, not the other way
 round.
 
 B<With Milla, you don't need to change your workflow>, and it won't
-rewrite your precious C<.pm> files at all. Like Module::Insall;s
+rewrite your precious C<.pm> files at all. Like Module::Install's
 C<all_from>, most of the metadata is figured out from your module and
 git, automatically.
 

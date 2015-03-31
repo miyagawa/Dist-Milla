@@ -123,6 +123,32 @@ committed, tagged and pushed to the remote.
 This section describes how to migrate your current authoring process
 to Milla.
 
+=head2 Automatic migration
+
+Sister project L<Minilla> provides a wonderful conversion tool to
+migrate your existing distribution to Milla, which happens to be
+compatible to Milla as well.
+
+As an author of Milla, I use Minilla's migrate command all the time to
+get the most of conversion done.
+
+To run Minilla migration tool, install L<Minilla> from CPAN and run
+the C<minila migrate> command in the project root.
+
+    > cpanm Minilla
+    > minil migrate
+
+The command will output the migration process, and C<git add> all the
+changed files for you. Once the migrate command is complete, all you
+have to do is to create C<dist.ini> file, and run the build command.
+
+    > echo "[@Milla]" > dist.ini
+    > milla build
+
+If one of the command has failed, you might need to reset to the
+original state and run the manual migration. Read on to see how to do
+that.
+
 =head2 Manually migrating from other build tools
 
 =head3 Module Dependencies to cpanfile

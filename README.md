@@ -153,7 +153,7 @@ Let's see how we can address them by using Milla, one at a time.
     round.
 
     **With Milla, you don't need to change your workflow**, and it won't
-    rewrite your precious `.pm` files at all. Like Module::Insall;s
+    rewrite your precious `.pm` files at all. Like Module::Install's
     `all_from`, most of the metadata is figured out from your module and
     git, automatically.
 

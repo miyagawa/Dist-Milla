@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v1.0.15  2015-03-31 16:25:26 PDT
+        - Update documentation
+
 v1.0.14  2015-01-19 11:23:45 PST
         - switched from ContributorsFromGit to Git::Contributors
 

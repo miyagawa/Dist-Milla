@@ -265,7 +265,7 @@ distribution other than L<ExtUtils::MakeMaker> and L<Module::Build>,
 and I think they're wrong tools for I<authoring> distributions.
 
 Check out L<Minilla> if you think Dist::Zilla is overkill and want a
-lightweight replacement that achieves the same goal byt does less.
+lightweight replacement that achieves the same goal but does less.
 
 =head3 Milla?
 

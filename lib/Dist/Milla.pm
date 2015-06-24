@@ -151,12 +151,12 @@ Moose, the object system Dist::Zilla uses under the hood, has been
 improved a lot for the past few years, and your development machine
 has got a much better CPU and SSD as well. For me personally, with all
 of Milla plugins loaded, C<milla nop> takes roughly 1.5 second, which
-B<I would say is acceptable> since I only need to run it at a
+I would say is acceptable since I only need to run it at a
 distribution creation time and release time. More on that later.
 
 =item Dist::Zilla has too many dependencies
 
-This is true, and Milla doesn't solve that problem. Since it I<adds>
+This is true, and Milla doesn't solve that problem, because it I<adds>
 more dependencies on top of Dist::Zilla.
 
 For a quickstart with Milla-like distribution building environment
@@ -182,9 +182,9 @@ authoring tool figure out metadata I<from> there, not the other way
 round.
 
 B<With Milla, you don't need to change your workflow>, and it won't
-rewrite your precious C<.pm> files at all. Like Module::Install's
-C<all_from>, most of the metadata is figured out from your module and
-git, automatically.
+rewrite your C<.pm> files at all. Like Module::Install's C<all_from>,
+most of the metadata is figured out from your module and git,
+automatically.
 
 =item Dist::Zilla makes contributing difficult
 
@@ -200,7 +200,7 @@ distribution even without L<Dist::Zilla> installed, and collaborators
 can just hack your modules, run the tests with C<prove -l t> and send
 a pull request just like a normal module without using dzil at all.
 
-B<It's just you who has to install Milla>.
+B<It's just a releaser who has to install and use Milla>.
 
 =item Dist::Zilla isn't just worth it
 
@@ -210,9 +210,9 @@ need. B<That is exactly why Milla exists>.
 
 If you have tried Dist::Zilla before, you might have shared the same
 experience with me, where the default Basic profile doesn't do
-much. And when you started wondering what other authors are doing, you
-would be overwhelmed by the amount of plugins and complexity
-introduced by the clever workflow.
+much. And when you started wondering or asking what other authors are
+doing, you would be overwhelmed by the amount of plugins and
+complexity introduced by the clever workflow.
 
 Milla provides a sensible set of defaults that will work for 90% of
 people, and you don't need to waste time configuring your PluginBundle

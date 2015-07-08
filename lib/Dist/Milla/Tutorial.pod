@@ -136,7 +136,7 @@ To run Minilla migration tool, install L<Minilla> from CPAN and run
 the C<minila migrate> command in the project root.
 
     > cpanm Minilla
-    > minil migrate
+    > minil migrate && git rm -f minil.toml
 
 The command will output the migration process, and C<git add> all the
 changed files for you. Once the migrate command is complete, all you

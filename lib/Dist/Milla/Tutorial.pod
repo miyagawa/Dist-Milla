@@ -133,7 +133,7 @@ As an author of Milla, I use Minilla's migrate command all the time to
 get the most of conversion done.
 
 To run Minilla migration tool, install L<Minilla> from CPAN and run
-the C<minila migrate> command in the project root.
+the C<minil migrate> command in the project root.
 
     > cpanm Minilla
     > minil migrate && git rm -f minil.toml

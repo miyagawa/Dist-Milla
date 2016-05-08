@@ -234,7 +234,7 @@ distribution other than [ExtUtils::MakeMaker](https://metacpan.org/pod/ExtUtils:
 and I think they're wrong tools for _authoring_ distributions.
 
 Check out [Minilla](https://metacpan.org/pod/Minilla) if you think Dist::Zilla is overkill and want a
-lightweight replacement that achieves the same goal byt does less.
+lightweight replacement that achieves the same goal but does less.
 
 ### Milla?
 

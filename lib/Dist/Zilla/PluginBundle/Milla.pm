@@ -1,4 +1,8 @@
 package Dist::Zilla::PluginBundle::Milla;
+
+use strict;
+use version; our $VERSION = version->declare('v1.0.15');
+
 use Dist::Milla;
 use Moose;
 with 'Dist::Zilla::Role::PluginBundle::Easy',

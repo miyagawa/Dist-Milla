@@ -1,11 +1,11 @@
 requires 'perl', 5.012;
 
-requires 'Dist::Zilla', 4.300032;
+requires 'Dist::Zilla', 6;
 requires 'Module::CPANfile', 0.9025;
 
 requires 'Dist::Zilla::Plugin::CheckChangesHasContent';
 requires 'Dist::Zilla::Plugin::ConfirmRelease';
-requires 'Dist::Zilla::Plugin::CopyFilesFromBuild';
+requires 'Dist::Zilla::Plugin::CopyFilesFromBuild', '0.163040';
 requires 'Dist::Zilla::Plugin::CopyFilesFromRelease';
 requires 'Dist::Zilla::Plugin::ExecDir';
 requires 'Dist::Zilla::Plugin::ExtraTests';
@@ -19,7 +19,7 @@ requires 'Dist::Zilla::Plugin::Manifest';
 requires 'Dist::Zilla::Plugin::MetaJSON';
 requires 'Dist::Zilla::Plugin::MetaYAML';
 requires 'Dist::Zilla::Plugin::ModuleBuildTiny';
-requires 'Dist::Zilla::Plugin::NameFromDirectory';
+requires 'Dist::Zilla::Plugin::NameFromDirectory', '0.04';
 requires 'Dist::Zilla::Plugin::NextRelease';
 requires 'Dist::Zilla::Plugin::PodSyntaxTests';
 requires 'Dist::Zilla::Plugin::Prereqs::FromCPANfile', '0.06';

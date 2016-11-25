@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v1.0.17  2016-11-25 00:24:43 PST
+        - Update Dist::Zilla requirement to version 6 #44
+
 v1.0.16  2016-05-08 11:49:31 PDT
         - Add VERSION to Dist::Zilla::PluginBundle::Milla #38
         - Use ReadmeAnyFromPod for POD #39

@@ -4,7 +4,7 @@
       "Tatsuhiko Miyagawa <miyagawa@bulknews.net>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.047, Dist::Milla version v1.0.15, CPAN::Meta::Converter version 2.150005",
+   "generated_by" : "Dist::Milla version v1.0.16, Dist::Zilla version 6.008, CPAN::Meta::Converter version 2.150010",
    "license" : [
       "perl_5"
    ],
@@ -36,16 +36,16 @@
       },
       "develop" : {
          "requires" : {
-            "Dist::Milla" : "v1.0.15",
+            "Dist::Milla" : "v1.0.16",
             "Test::Pod" : "1.41"
          }
       },
       "runtime" : {
          "requires" : {
-            "Dist::Zilla" : "4.300032",
+            "Dist::Zilla" : "6",
             "Dist::Zilla::Plugin::CheckChangesHasContent" : "0",
             "Dist::Zilla::Plugin::ConfirmRelease" : "0",
-            "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0",
+            "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0.163040",
             "Dist::Zilla::Plugin::CopyFilesFromRelease" : "0",
             "Dist::Zilla::Plugin::ExecDir" : "0",
             "Dist::Zilla::Plugin::ExtraTests" : "0",
@@ -59,7 +59,7 @@
             "Dist::Zilla::Plugin::MetaJSON" : "0",
             "Dist::Zilla::Plugin::MetaYAML" : "0",
             "Dist::Zilla::Plugin::ModuleBuildTiny" : "0",
-            "Dist::Zilla::Plugin::NameFromDirectory" : "0",
+            "Dist::Zilla::Plugin::NameFromDirectory" : "0.04",
             "Dist::Zilla::Plugin::NextRelease" : "0",
             "Dist::Zilla::Plugin::PodSyntaxTests" : "0",
             "Dist::Zilla::Plugin::Prereqs::FromCPANfile" : "0.06",
@@ -96,7 +96,7 @@
          "web" : "https://github.com/miyagawa/Dist-Milla"
       }
    },
-   "version" : "v1.0.16",
+   "version" : "v1.0.17",
    "x_contributors" : [
       "Alex Efros <powerman@powerman.name>",
       "Curtis Brandt <curtis@cpan.org>",
@@ -105,7 +105,9 @@
       "Karen Etheridge <ether@cpan.org>",
       "mikegrb <mgreb@linode.com>",
       "Olivier Mengu\u00e9 <dolmen@cpan.org>",
-      "Shawn M Moore <code@sartak.org>"
-   ]
+      "Shawn M Moore <code@sartak.org>",
+      "Tatsuhiko Miyagawa <miyagawa@gmail.com>"
+   ],
+   "x_serialization_backend" : "Cpanel::JSON::XS version 3.0224"
 }
 

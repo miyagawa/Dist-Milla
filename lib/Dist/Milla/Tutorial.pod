@@ -118,6 +118,19 @@ This will update C<Changes>, C<META.json> and bump C<$VERSION> in your
 main module. These changes made by Milla will be automatically
 committed, tagged and pushed to the remote.
 
+=head2 Making a testing (TRIAL) release
+
+It is recommended to upload your changes to CPAN as testing release first.
+Testing releases are not automatically installed by CPAN clients, but are 
+automatically tested.
+
+Just release it the same way as above with the additional C<--trial> option:
+  
+  > milla release --trial
+
+This will automatically set the release status in C<META.json> to C<testing> 
+and append C<-TRIAL> to the version of the distribution.
+
 =head1 MIGRATING
 
 This section describes how to migrate your current authoring process

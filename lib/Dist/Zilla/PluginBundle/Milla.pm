@@ -35,7 +35,10 @@ sub configure {
                     $self->installer);
     }
 
-    my @dirty_files = ('dist.ini', 'Changes', 'META.json', 'README.md', $self->build_file);
+    my $dirty_config = $self->config_slice(qw( add_files_in allow_dirty allow_dirty_match ));
+    my @dirty_files = ('dist.ini', 'Changes', 'META.json', 'README.md', $self->build_file, @{$dirty_config->{allow_dirty} || []});
+    my @dirty_matches = @{$dirty_config->{allow_dirty_match} || []};
+    my @additional_paths = @{$dirty_config->{add_files_in} || []};
     my @exclude_release = ('README.md');
 
     $self->add_plugins(
@@ -55,7 +58,10 @@ sub configure {
         # after ReversionOnRelease for munge_files, before Git::Commit for after_release
         [ 'NextRelease', { format => '%v  %{yyyy-MM-dd HH:mm:ss VVV}d' } ],
 
-        [ 'Git::Check', { allow_dirty => \@dirty_files } ],
+        [ 'Git::Check', {
+            allow_dirty => \@dirty_files,
+            (@dirty_matches ? (allow_dirty_match => \@dirty_matches) : ()),
+        } ],
 
         # Make Github center and front
         [ 'GithubMeta', { issues => 1 } ],
@@ -98,13 +104,16 @@ sub configure {
         [ 'Git::Commit', {
             commit_msg => '%v',
             allow_dirty => \@dirty_files,
-            allow_dirty_match => '\.pm$', # .pm files copied back from Release
+            allow_dirty_match => [@dirty_matches, '\.pm$'], # .pm files copied back from Release
+            (@additional_paths ? (add_files_in => \@additional_paths) : ()),
         } ],
         [ 'Git::Tag', { tag_format => '%v', tag_message => '' } ],
         [ 'Git::Push', { remotes_must_exist => 0 } ],
 
     );
 }
+
+sub mvp_multivalue_args { qw( add_files_in allow_dirty allow_dirty_match ) }
 
 __PACKAGE__->meta->make_immutable;
 1;
@@ -121,6 +130,11 @@ Dist::Zilla::PluginBundle::Milla - Dist::Zilla plugin defaults for Milla
   name = Dist-Name
   [@Milla]
   installer = MakeMaker
+  allow_dirty = some/autoupdated/file
+  allow_dirty = some/autoupdated/otherfile
+  allow_dirty_match = ^auto/gen-
+  add_files_in = some/auto/directory
+
 
 =head1 DESCRIPTION
 

@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v1.0.18  2017-06-05 22:07:25 PDT
+        - Switch VersionFromModule to VersionFromMainModule
+
 v1.0.17  2016-11-25 00:24:43 PST
         - Update Dist::Zilla requirement to version 6 #44
 

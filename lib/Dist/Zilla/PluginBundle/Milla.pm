@@ -127,7 +127,85 @@ Dist::Zilla::PluginBundle::Milla - Dist::Zilla plugin defaults for Milla
 This is a Dist::Zilla plugin bundle that implements the opinionated build
 process of Milla. Roughly equivalent to:
 
-  # TBD
+  Varirables first:
+  $INSTALLER  = installer from Milla options or ModuleBuildTiny
+  $BUILD_FILE = ( $INSTALLER =~ /MakeMaker/ ) ? 'Makefile.PL' : 'Build.PL'
+  $RELEASE_TO = ( $ENV{FAKE_RELEASE} )        ? 'FakeRelease' : 'UploadToCPAN';
+
+  [NameFromDirectory]
+  [Git::GatherDir]
+  exclude_filename = $BUILD_FILE
+  exclude_filename = META.json
+  exclude_filename = LICENSE
+  exclude_filename = README.md
+  [CopyFilesFromBuild]
+  copy = META.json
+  copy = $BUILD_FILE
+  copy = LICENSE
+  [VersionFromMainModule]
+  [LicenseFromModule]
+  override_author = 1
+  [ReversionOnRelease]
+  prompt = 1
+  [NextRelease]
+  format = '%v  %{yyyy-MM-dd HH:mm:ss VVV}d'
+  [Git::Check]
+  allow_dirty = dist.ini
+  allow_dirty = Changes
+  allow_dirty = META.json
+  allow_dirty = README.md
+  allow_dirty = $BUILD_FILE
+  [GithubMeta]
+  issues = 1
+  [ReadmeAnyFromPod]
+  type = markdown
+  filename = README.md
+  location = root
+  [MetaNoIndex]
+  directory = t
+  directory = xt
+  directory = inc
+  directory = share
+  directory = eg
+  directory = examples
+  [Prereqs::FromCPANfile]
+  [$INSTALLER]
+  [MetaJSON]
+  [Milla::MetaGeneratedBy]
+  [Git::Contributors]
+  [Prereqs]
+  -phase = develop
+  Dist::Mill = $CURRENT_DIST_MILLA_VERSION
+  [PodSyntaxTests]
+  [MetaYAML]
+  [License]
+  [ReadmeAnyFromPod]
+  [ReadmeAnyFromPod/ReadmeTextInBuild]
+  [ExtraTests]
+  [ExecDir]
+  dir = script
+  [ShareDir]
+  [Manifest]
+  [ManifestSkip]
+  [CheckChangesHasContent]
+  [TestRelease]
+  [ConfirmRelease]
+  [$RELEASE_TO]
+  [CopyFilesFromRelease]
+  match = \.pm$
+  [Git::Commit]
+  commit_msg = '%v'
+  allow_dirty = dist.ini
+  allow_dirty = Changes
+  allow_dirty = META.json
+  allow_dirty = README.md
+  allow_dirty = $BUILD_FILE
+  allow_dirty_match = \.pm$
+  [Git::Tag]
+  tag_format  = '%v'
+  tag_message = ''
+  [Git::Push]
+  remotes_must_exist = 0
 
 =head1 SEE ALSO
 

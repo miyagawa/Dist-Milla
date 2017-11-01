@@ -127,7 +127,7 @@ Dist::Zilla::PluginBundle::Milla - Dist::Zilla plugin defaults for Milla
 This is a Dist::Zilla plugin bundle that implements the opinionated build
 process of Milla. Roughly equivalent to:
 
-  Varirables first:
+  Variables first:
   $INSTALLER  = installer from Milla options or ModuleBuildTiny
   $BUILD_FILE = ( $INSTALLER =~ /MakeMaker/ ) ? 'Makefile.PL' : 'Build.PL'
   $RELEASE_TO = ( $ENV{FAKE_RELEASE} )        ? 'FakeRelease' : 'UploadToCPAN';

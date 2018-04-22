@@ -64,6 +64,9 @@ sub configure {
         # Set no_index to sensible directories
         [ 'MetaNoIndex', { directory => [ qw( t xt inc share eg examples ) ] } ],
 
+        # experimental dist metadata
+        [ 'StaticInstall', { mode => 'auto' } ],
+
         # cpanfile -> META.json
         [ 'Prereqs::FromCPANfile' ],
         [ $self->installer ],

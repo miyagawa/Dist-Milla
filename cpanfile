@@ -27,6 +27,7 @@ requires 'Dist::Zilla::Plugin::ReadmeAnyFromPod';
 requires 'Dist::Zilla::Plugin::ReadmeFromPod';
 requires 'Dist::Zilla::Plugin::ReversionOnRelease', '0.04';
 requires 'Dist::Zilla::Plugin::ShareDir';
+requires 'Dist::Zilla::Plugin::StaticInstall';
 requires 'Dist::Zilla::Plugin::Test::Compile';
 requires 'Dist::Zilla::Plugin::TestRelease';
 requires 'Dist::Zilla::Plugin::UploadToCPAN';

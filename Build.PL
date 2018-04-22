@@ -48,6 +48,7 @@ my %module_build_args = (
     "Dist::Zilla::Plugin::ReadmeFromPod" => 0,
     "Dist::Zilla::Plugin::ReversionOnRelease" => "0.04",
     "Dist::Zilla::Plugin::ShareDir" => 0,
+    "Dist::Zilla::Plugin::StaticInstall" => 0,
     "Dist::Zilla::Plugin::Test::Compile" => 0,
     "Dist::Zilla::Plugin::TestRelease" => 0,
     "Dist::Zilla::Plugin::UploadToCPAN" => 0,

@@ -1,7 +1,7 @@
 package Dist::Zilla::PluginBundle::Milla;
 
 use strict;
-use version; our $VERSION = version->declare('v1.0.18');
+use version; our $VERSION = version->declare('v1.0.19');
 
 use Dist::Milla;
 use Moose;

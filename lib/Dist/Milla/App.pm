@@ -1,7 +1,7 @@
 package Dist::Milla::App;
 use strict;
 use parent 'Dist::Zilla::App';
-use version; our $VERSION = version->declare('v1.0.18');
+use version; our $VERSION = version->declare('v1.0.19');
 
 sub _default_command_base { 'Dist::Zilla::App::Command' }
 

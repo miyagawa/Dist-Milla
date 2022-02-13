@@ -13,14 +13,14 @@ Dist::Milla - Distribution builder, Opinionated but Unobtrusive
 # DESCRIPTION
 
 **Milla is a Dist::Zilla profile**. It is a collection of
-[Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) plugin bundle, minting profile and a command line
+[Dist::Zilla](https://metacpan.org/pod/Dist%3A%3AZilla) plugin bundle, minting profile and a command line
 wrapper. It is designed around the "Convention over Configuration"
 philosophy (Opinionated), and by default doesn't rewrite module files
 nor requires you to change your workflow at all (Unobtrusive).
 
 Experienced CPAN authors who know how to write CPAN distributions can
 keep writing the code like before, but can remove lots of cruft, then
-replace [Module::Install](https://metacpan.org/pod/Module::Install) and [ShipIt](https://metacpan.org/pod/ShipIt) with [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) and Milla
+replace [Module::Install](https://metacpan.org/pod/Module%3A%3AInstall) and [ShipIt](https://metacpan.org/pod/ShipIt) with [Dist::Zilla](https://metacpan.org/pod/Dist%3A%3AZilla) and Milla
 profile for authoring, while you don't need to _add_ anything other
 than a shiny new [cpanfile](https://metacpan.org/pod/cpanfile) (optional), and a simple `dist.ini`
 saying:
@@ -42,7 +42,7 @@ sister project [Minilla](https://metacpan.org/pod/Minilla).
 
 If you have a module that doesn't work with these conventions, no
 worries. Because Milla is just a Dist::Zilla profile, you can just
-upgrade to [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) and enable/disable plugins that match with
+upgrade to [Dist::Zilla](https://metacpan.org/pod/Dist%3A%3AZilla) and enable/disable plugins that match with
 what you need.
 
 # GETTING STARTED
@@ -72,9 +72,9 @@ what you need.
 
 It's that easy.
 
-You already have distributions with [Module::Install](https://metacpan.org/pod/Module::Install),
-[Module::Build](https://metacpan.org/pod/Module::Build) or [ShipIt](https://metacpan.org/pod/ShipIt)? Migrating is also trivial. See
-["MIGRATING" in Dist::Milla::Tutorial](https://metacpan.org/pod/Dist::Milla::Tutorial#MIGRATING) for more details.
+You already have distributions with [Module::Install](https://metacpan.org/pod/Module%3A%3AInstall),
+[Module::Build](https://metacpan.org/pod/Module%3A%3ABuild) or [ShipIt](https://metacpan.org/pod/ShipIt)? Migrating is also trivial. See
+["MIGRATING" in Dist::Milla::Tutorial](https://metacpan.org/pod/Dist%3A%3AMilla%3A%3ATutorial#MIGRATING) for more details.
 
 # WHY
 
@@ -167,7 +167,7 @@ Let's see how we can address them by using Milla, one at a time.
     `$VERSION` automatically).
 
     This means that the git repository can be installed as a standard CPAN
-    distribution even without [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) installed, and collaborators
+    distribution even without [Dist::Zilla](https://metacpan.org/pod/Dist%3A%3AZilla) installed, and collaborators
     can just hack your modules, run the tests with `prove -l t` and send
     a pull request just like a normal module without using dzil at all.
 
@@ -204,7 +204,7 @@ interested in doing so.
 
 ### So you basically wrote a simple PluginBundle and some wrapper, and give that a name?
 
-Yes. That's the whole point. Think [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla) as a framework
+Yes. That's the whole point. Think [Dist::Zilla](https://metacpan.org/pod/Dist%3A%3AZilla) as a framework
 (because it is!) and Milla is a (thin) application built on top of
 that.
 
@@ -230,7 +230,7 @@ different name other than my own personal name bundle.
 
 I agree that it is still overkill. But as of this writing, there's no
 software other than Dist::Zilla that can correctly create a CPAN style
-distribution other than [ExtUtils::MakeMaker](https://metacpan.org/pod/ExtUtils::MakeMaker) and [Module::Build](https://metacpan.org/pod/Module::Build),
+distribution other than [ExtUtils::MakeMaker](https://metacpan.org/pod/ExtUtils%3A%3AMakeMaker) and [Module::Build](https://metacpan.org/pod/Module%3A%3ABuild),
 and I think they're wrong tools for _authoring_ distributions.
 
 Check out [Minilla](https://metacpan.org/pod/Minilla) if you think Dist::Zilla is overkill and want a
@@ -254,9 +254,9 @@ Tatsuhiko Miyagawa <miyagawa@bulknews.net>
 
 # CONTRIBUTORS
 
-Ricardo SIGNES wrote [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla).
+Ricardo SIGNES wrote [Dist::Zilla](https://metacpan.org/pod/Dist%3A%3AZilla).
 
-David Golden wrote [Dist::Zilla::PluginBundle::DAGOLDEN](https://metacpan.org/pod/Dist::Zilla::PluginBundle::DAGOLDEN), which I
+David Golden wrote [Dist::Zilla::PluginBundle::DAGOLDEN](https://metacpan.org/pod/Dist%3A%3AZilla%3A%3APluginBundle%3A%3ADAGOLDEN), which I
 cargo culted a lot of configuration from, for Milla bundle.
 
 Tokuhiro Matsuno has beaten me to writing [Minilla](https://metacpan.org/pod/Minilla), which resulted
@@ -275,4 +275,4 @@ it under the same terms as Perl itself.
 
 # SEE ALSO
 
-[Dist::Zilla](https://metacpan.org/pod/Dist::Zilla), [Minilla](https://metacpan.org/pod/Minilla)
+[Dist::Zilla](https://metacpan.org/pod/Dist%3A%3AZilla), [Minilla](https://metacpan.org/pod/Minilla)

@@ -2,6 +2,9 @@ Revision history for Dist::Milla
 
 {{$NEXT}}
 
+v1.0.22  2023-07-05 12:37:17 PDT
+        - Bump minimum perl requirement to 5.12 in new dists
+
 v1.0.21  2022-02-12 21:19:02 PST
         - Allow LICENSE file to be dirty
 

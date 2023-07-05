@@ -38,7 +38,7 @@ MYMETA.*
 !META.json
 /.prove
 ___[ cpanfile ]___
-requires 'perl', '5.008005';
+requires 'perl', '5.012';
 
 # requires 'Some::Module', 'VERSION';
 

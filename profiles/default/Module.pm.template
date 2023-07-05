@@ -1,7 +1,7 @@
 package {{$name}};
 
 use strict;
-use 5.008_005;
+use 5.012;
 our $VERSION = '0.01';
 
 1;

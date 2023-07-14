@@ -25,15 +25,9 @@ __END__
 
 {{(my $a = $dist->authors->[0]) =~ s/([<>])/"E<" . {qw(< lt > gt)}->{$1} . ">"/eg; $a}}
 
-=head1 COPYRIGHT
+=head1 COPYRIGHT AND LICENSE
 
-Copyright {{$dist->copyright_year}}- {{(my $a = $dist->authors->[0]) =~ s/\s*<.*$//; $a}}
-
-=head1 LICENSE
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
-
+{{$dist->license->notice}}
 =head1 SEE ALSO
 
 =cut

@@ -130,11 +130,90 @@ Dist::Zilla::PluginBundle::Milla - Dist::Zilla plugin defaults for Milla
 This is a Dist::Zilla plugin bundle that implements the opinionated build
 process of Milla. Roughly equivalent to:
 
-  # TBD
+  Variables first:
+  $INSTALLER  = installer from Milla options or ModuleBuildTiny
+  $BUILD_FILE = ( $INSTALLER =~ /MakeMaker/ ) ? 'Makefile.PL' : 'Build.PL'
+  $RELEASE_TO = ( $ENV{FAKE_RELEASE} )        ? 'FakeRelease' : 'UploadToCPAN';
+
+  [NameFromDirectory]
+  [Git::GatherDir]
+  exclude_filename = $BUILD_FILE
+  exclude_filename = META.json
+  exclude_filename = LICENSE
+  exclude_filename = README.md
+  [CopyFilesFromBuild]
+  copy = META.json
+  copy = $BUILD_FILE
+  copy = LICENSE
+  [VersionFromMainModule]
+  [LicenseFromModule]
+  override_author = 1
+  [ReversionOnRelease]
+  prompt = 1
+  [NextRelease]
+  format = '%v  %{yyyy-MM-dd HH:mm:ss VVV}d'
+  [Git::Check]
+  allow_dirty = dist.ini
+  allow_dirty = Changes
+  allow_dirty = META.json
+  allow_dirty = README.md
+  allow_dirty = $BUILD_FILE
+  [GithubMeta]
+  issues = 1
+  [ReadmeAnyFromPod]
+  type = markdown
+  filename = README.md
+  location = root
+  [MetaNoIndex]
+  directory = t
+  directory = xt
+  directory = inc
+  directory = share
+  directory = eg
+  directory = examples
+  [Prereqs::FromCPANfile]
+  [$INSTALLER]
+  [MetaJSON]
+  [Milla::MetaGeneratedBy]
+  [Git::Contributors]
+  [Prereqs]
+  -phase = develop
+  Dist::Mill = $CURRENT_DIST_MILLA_VERSION
+  [PodSyntaxTests]
+  [MetaYAML]
+  [License]
+  [ReadmeAnyFromPod]
+  [ReadmeAnyFromPod/ReadmeTextInBuild]
+  [ExtraTests]
+  [ExecDir]
+  dir = script
+  [ShareDir]
+  [Manifest]
+  [ManifestSkip]
+  [CheckChangesHasContent]
+  [TestRelease]
+  [ConfirmRelease]
+  [$RELEASE_TO]
+  [CopyFilesFromRelease]
+  match = \.pm$
+  [Git::Commit]
+  commit_msg = '%v'
+  allow_dirty = dist.ini
+  allow_dirty = Changes
+  allow_dirty = META.json
+  allow_dirty = README.md
+  allow_dirty = $BUILD_FILE
+  allow_dirty_match = \.pm$
+  [Git::Tag]
+  tag_format  = '%v'
+  tag_message = ''
+  [Git::Push]
+  remotes_must_exist = 0
 
 =head1 SEE ALSO
 
 L<Dist::Milla>
 
-=cut
+L<NameFromDirectory|Dist::Zilla::Plugin::NameFromDirectory>, L<Git::GatherDir|Dist::Zilla::Plugin::Git::GatherDir>, L<CopyFilesFromBuild|Dist::Zilla::Plugin::CopyFilesFromBuild>, L<VersionFromMainModule|Dist::Zilla::Plugin::VersionFromMainModule>, L<LicenseFromModule|Dist::Zilla::Plugin::LicenseFromModule>, L<ReversionOnRelease|Dist::Zilla::Plugin::ReversionOnRelease>, L<NextRelease|Dist::Zilla::Plugin::NextRelease>, L<Git::Check|Dist::Zilla::Plugin::Git::Check>, L<GithubMeta|Dist::Zilla::Plugin::GithubMeta>, L<ReadmeAnyFromPod|Dist::Zilla::Plugin::ReadmeAnyFromPod>, L<MetaNoIndex|Dist::Zilla::Plugin::MetaNoIndex>, L<Prereqs::FromCPANfile|Dist::Zilla::Plugin::Prereqs::FromCPANfile>, L<MetaJSON|Dist::Zilla::Plugin::MetaJSON>, L<Milla::MetaGeneratedBy|Dist::Zilla::Plugin::Milla::MetaGeneratedBy>, L<Git::Contributors|Dist::Zilla::Plugin::Git::Contributors>, L<Prereqs|Dist::Zilla::Plugin::Prereqs>, L<PodSyntaxTests|Dist::Zilla::Plugin::PodSyntaxTests>, L<MetaYAML|Dist::Zilla::Plugin::MetaYAML>, L<License|Dist::Zilla::Plugin::License>, L<ReadmeAnyFromPod|Dist::Zilla::Plugin::ReadmeAnyFromPod>, L<ExtraTests|Dist::Zilla::Plugin::ExtraTests>, L<ExecDir|Dist::Zilla::Plugin::ExecDir>, L<ShareDir|Dist::Zilla::Plugin::ShareDir>, L<Manifest|Dist::Zilla::Plugin::Manifest>, L<ManifestSkip|Dist::Zilla::Plugin::ManifestSkip>, L<CheckChangesHasContent|Dist::Zilla::Plugin::CheckChangesHasContent>, L<TestRelease|Dist::Zilla::Plugin::TestRelease>, L<ConfirmRelease|Dist::Zilla::Plugin::ConfirmRelease>, L<CopyFilesFromRelease|Dist::Zilla::Plugin::CopyFilesFromRelease>, L<Git::Commit|Dist::Zilla::Plugin::Git::Commit>, L<Git::Tag|Dist::Zilla::Plugin::Git::Tag>, L<Git::Push|Dist::Zilla::Plugin::Git::Push>
 
+=cut
